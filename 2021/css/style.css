@@ -14,8 +14,10 @@ font-family: 'Open Sans', sans-serif;
 ==================================================*/
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 80px;
+    letter-spacing: 10px;
+    /*color: #BBBBBB;*/
     line-height: 70px;
 }
 
@@ -24,6 +26,7 @@ h4 {
     text-transform: capitalize;
     letter-spacing: 2px;
     position: relative;
+    font-size: 25px;
     color: #FFFFFF;
     margin-left: 40px;
     font-weight: 700;
@@ -227,7 +230,7 @@ nav li a {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #444;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: bold;
 }
 
