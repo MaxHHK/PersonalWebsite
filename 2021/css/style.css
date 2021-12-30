@@ -9,6 +9,12 @@ font-family: 'Lato', sans-serif;
 font-family: 'Open Sans', sans-serif;
 */
 
+/* personal */
+
+header nav ul li a {
+    color: #DDDDDD;
+}
+
 
 /* typography
 ==================================================*/
@@ -43,10 +49,7 @@ h4:before {
     top: 9px;
 }
 
-div #cover1 {
-    background: url(cover1.jpg);
-    height: 500px;
-}
+
 /* General
 ==================================================*/
 
@@ -267,7 +270,7 @@ a.active {
 #home {
     background: url(../img/home-bg-2.jpg);
     background-size: cover;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 .table-cell {
