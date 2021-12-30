@@ -43,7 +43,10 @@ h4:before {
     top: 9px;
 }
 
-
+div #cover1 {
+    background: url(cover1.jpg);
+    height: 500px;
+}
 /* General
 ==================================================*/
 
@@ -481,7 +484,7 @@ a.active {
     left: 0px;
     height: 100%;
     width: 100%;
-    background-color: #425BB5;
+    background-color: #0091BD;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
     opacity: 0;
@@ -516,7 +519,7 @@ a.active {
 .portfolio_item .portfolio_item_hover .item_info em {
     font-style: normal;
     display: inline-block;
-    background-color: #425BB5;
+    /*background-color: #425BB5;*/
     padding: 5px 20px;
     color: #fff;
     margin-top: 10px;
@@ -525,7 +528,7 @@ a.active {
     -webkit-transition: all .3s ease-in-out .3s;
     transition: all .3s ease-in-out .3s;
     opacity: 0;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
@@ -560,8 +563,8 @@ a.active {
 }
 
 .portfolio_item img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    /*-webkit-filter: grayscale(100%);*/
+    /*filter: grayscale(100%);*/
 }
 
 .portfolio-padding {
