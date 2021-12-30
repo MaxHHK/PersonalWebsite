@@ -25,7 +25,6 @@ h1 {
     letter-spacing: 10px;
     /*color: #BBBBBB;*/
     line-height: 70px;
-    text-align: right;
 }
 
 h4 {
@@ -37,7 +36,6 @@ h4 {
     color: #FFFFFF;
     margin-left: 40px;
     font-weight: 700;
-    text-align: right;
 }
 
 h4:before {
@@ -270,12 +268,15 @@ a.active {
 ==================================================*/
 
 #home {
-    background: url(../img/home-bg-2.jpg);
+    background: url(../img/home-bg-2.jpg) no-repeat center center;
     background-size: cover;
-    height: 100vh;
     margin: 0px;
     padding: 0px;
-    /*height: 100vh;*/
+    height: 100%;
+    width: 100%;
+    /*position: absolute;*/
+    left: 0;
+    top: 0;
 }
 
 .table-cell {
