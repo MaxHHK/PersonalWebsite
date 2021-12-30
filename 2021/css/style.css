@@ -49,6 +49,11 @@ h4:before {
     top: 9px;
 }
 
+div.main-text {
+    text-indent:2em;
+    font-size: 18px;
+}
+
 
 /* General
 ==================================================*/
