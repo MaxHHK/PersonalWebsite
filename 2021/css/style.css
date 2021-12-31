@@ -25,6 +25,7 @@ h1 {
     letter-spacing: 10px;
     /*color: #BBBBBB;*/
     line-height: 70px;
+    padding-right: 10px;
 }
 
 h4 {
@@ -36,17 +37,18 @@ h4 {
     color: #FFFFFF;
     margin-left: 40px;
     font-weight: 700;
+    padding-right: 12px;
 }
 
 h4:before {
     position: absolute;
-    width: 30px;
+    width: 50px;
     left: -40px;
     content: "";
     display: block;
     height: 2px;
     background: #FFFFFF;
-    top: 9px;
+    top: 13px;
 }
 
 
@@ -328,7 +330,7 @@ a.active {
     /*height: 80vw;*/
     padding-bottom: 75%;
     top: 80px;
-    left: 20px;
+    left: 50px;
     z-index: 1
 }
 
@@ -552,7 +554,7 @@ a.active {
     display: inline-block;
     /*background-color: #425BB5;*/
     padding: 5px 20px;
-    color: #E6E6FA;
+    color: #FFFFFF;
     margin-top: 10px;
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
