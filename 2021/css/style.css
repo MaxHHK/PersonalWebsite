@@ -49,10 +49,6 @@ h4:before {
     top: 9px;
 }
 
-div.main-text {
-    text-indent:2em;
-    font-size: 18px;
-}
 
 
 /* General
@@ -517,10 +513,11 @@ a.active {
     left: 0px;
     height: 100%;
     width: 100%;
-    background-color: #0091BD;
+    background: rgba(255, 255, 255, .3);
+    box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
-    opacity: 0;
+    /*opacity: 90%;*/
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     color: #333;
@@ -540,7 +537,7 @@ a.active {
 
 .portfolio_item .portfolio_item_hover .item_info span {
     display: block;
-    color: #fff;
+    color: #444444;
     font-size: 18px;
     -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
@@ -554,7 +551,7 @@ a.active {
     display: inline-block;
     /*background-color: #425BB5;*/
     padding: 5px 20px;
-    color: #fff;
+    color: #444444;
     margin-top: 10px;
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
