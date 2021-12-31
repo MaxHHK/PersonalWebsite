@@ -11,3 +11,29 @@ p.timeline-event-thumbnail {
 div.book {
     font-size: 16px;
 }
+
+.video {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    /*margin-bottom: 30px;*/
+    margin:20px 20px 20px 20px;
+}
+
+.video .video_mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    /*background: rgba(255, 255, 255, 0.8);*/
+    /*background: url(../img/cover1.jpg) no-repeat;*/
+    /*box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);*/
+    
+    /*transform: translateY(100%);*/
+    /*color: #333;*/
+    /*height:0px;*/
+    /*overflow:visible;*/
+    pointer-events:none;
+    /*background:none !important;*/
+}

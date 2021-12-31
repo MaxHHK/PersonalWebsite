@@ -200,3 +200,8 @@ function ShowLess(show_div, bg_div)
     document.getElementById(show_div).style.display='none';
     document.getElementById(bg_div).style.display='none';
 };
+
+
+ $("#video_mask").click(function(){//点击iframe
+            alert("点击1");
+ });
