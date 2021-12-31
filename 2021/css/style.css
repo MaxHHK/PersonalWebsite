@@ -324,7 +324,7 @@ a.active {
 .about-border {
     position: absolute;
     border: 10px solid #425BB5;
-    width: 80%;
+    width: 85%;
     /*height: 80vw;*/
     padding-bottom: 75%;
     top: 80px;
