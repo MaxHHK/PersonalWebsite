@@ -133,11 +133,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #8e43e7;
+  color: #5098A5;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #6719c4;
+    color: #AAAAAA;
     text-decoration: underline; }
 
 a:not([href]) {
@@ -9551,8 +9551,8 @@ a.text-dark:hover, a.text-dark:focus {
   clip: auto; }
 
 :root {
-  --primary-color: #8e43e7;
-  --secondary-color: #273c66;
+  --primary-color: #555555;
+  --secondary-color: #888888;
   --font-color: #696969;
   --bg-color: #fff;
   --heading-color: #3f3a64;
@@ -9566,8 +9566,8 @@ a.text-dark:hover, a.text-dark:focus {
   --widget-bg: #3f3a64; }
 
 [data-theme="dark"] {
-  --primary-color: #8e43e7;
-  --secondary-color: #273c66;
+  --primary-color: #DDDDDD;
+  --secondary-color: #AAAAAA;
   --font-color: #afafaf;
   --bg-color: #0b0d0e;
   --heading-color: #ddd;
