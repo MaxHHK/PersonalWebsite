@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2019 年总结</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- solve 403 -->
+    <meta name="referrer" content="no-referrer" />
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Montserrat for headings, Cardo for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Cardo:400,400italic,700">
+    <!-- Lightbox-->
+    <link rel="stylesheet" href="vendor/lightbox2/css/lightbox.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <!-- Leaflet CSS - For the map-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+
+  <body>
+    <!-- Player -->
+    <audio  id="player" src="./media/lafille.mp3" preload="meta" loop id="bgm"> </audio>
+
+    <!-- intro -->
+    <section id="intro" style="background:url('./img/personal/background.png'); background-repeat:no-repeat; background-size:cover;" class="intro">     
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-lg-8 col-md-12 mx-auto">
+              <p class="italic">洪浩恺</p>
+              <h1>辩护</h1>
+              <p class="italic">2019&nbsp年度总结</p>
+              <img src="img/btn/play.png" width="40" height="40" id="player_btn" onclick="play_pause()"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- intro end-->
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a href="#intro" class="navbar-brand link-scroll">
+            <img src="img/btn/logo.png" alt="" class="img-fluid" width="164" height="38" left="30">
+          </a>
+          <div>
+            <img src="img/btn/play.png" width="20" height="20" id="player_btn2" onclick="play_pause()"/>
+          </div>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">
+            <i class="fa fa-bars"></i>
+          </button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="#preface" class="nav-link link-scroll">前言</a></li>
+              <li class="nav-item"><a href="#thinking" class="nav-link link-scroll">思考</a></li>
+              <li class="nav-item"><a href="#reading" class="nav-link link-scroll">阅读</a></li>
+              <li class="nav-item"><a href="#emotion" class="nav-link link-scroll">情绪</a></li>
+              <li class="nav-item"><a href="#life" class="nav-link link-scroll">生活</a></li>
+              <li class="nav-item"><a href="#defend" class="nav-link link-scroll">非辩护</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- preface-->
+    <section id="preface" class="text">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+             <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/%E6%83%B3%E8%A6%8B%E4%BD%A0%E6%83%B3%E8%A6%8B%E4%BD%A0%E6%83%B3%E8%A6%8B%E4%BD%A0-%E9%9B%BB%E8%A6%96%E5%8A%87-%E6%83%B3%E8%A6%8B%E4%BD%A0-%E7%89%87%E5%B0%BE%E6%9B%B2/1486136136?i=1486136137&l=en">This is the music</iframe>
+            <p class="lead">2019 过去了</p>
+            <p>“我只看到一团团燃烧的欲望”，当一位好友问我就没有类似改变人类的的梦想吗，我这样回复了他。</p>
+            <p>而就在不久之后，当我读到“生命必不可免地永远是无权的，因为生命本质上是非道德的东西”，我才知道我长久以来思索的无意义的源头，是向上的生命意志的向下的道德意志的二律背反。</p>
+            <p>从此，我钻入<a id="philosopher" tabindex="0" style="text-decoration:none" class="bind_hover_card" role="button" data-toggle="popover" data-trigger="focus hover" data-content="弗里德里希·尼采">某位思想家</a>的世界，看到了最纯粹生命活力，而我当时以一种唾弃的眼光看待的“燃烧的欲望”也成了迄今最真实的形而上意义。那是彼岸的世界被从逻辑层面否定后的痛快，至今也难以忘怀。</p>
+            <p>至此，我想这一年来，或许是多年来思考的形而上，归根结底，只是在为了什么而辩护。</p>
+          </div>
+          <div class="col-lg-5 mx-auto">
+            <p><img src="img/personal/firework.png" alt="" class="img-fluid rounded-circle"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- preface end-->
+
+     <!-- thinking page-->
+    <section id="thinking" class="text-page section-inverse">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">辩护</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="heading">对审美</h3>
+                <p>谈审美，是一件很自负的事情。</p>
+                <p>从前我很自负地认为审美只是一种认为的时尚，由内心附和的欲望驱使着，而从尝试捕捉内心微妙情绪之后，发现审美情趣（aesthetic pleasing）还是存在内心的，我最先发现的是我偏爱朦胧美，如小时候听英文歌，能听懂只言片语，感觉很妙，之后还有粤语歌，单纯喜欢听不懂完整歌词，却能在一些不知道是否关键的地方听懂，然后作为一种节奏，像鼓点抨击着，就感到很喜欢。而之后能喜欢而不是欣赏古典，或许也处于这个原因，听不全动机，也听不全乐器，甚至连情绪也听不出来，但是喜欢乐曲在作为整体后听不懂之中穿插着的让你陡然听明白的那几个瞬间，那时候没有吃炸鸡那种痛快，也没有入睡前的安慰，感觉像在陌生小镇突然遇见曾经喜欢的一个女孩，我不知道将之名为何种情绪，就感觉很像审美愉悦。 只有作为一种审美现象，人生和世界才显得是由充足理由的。</p>
+              </div>
+              <div class="col-md-6">
+                <h4 class="heading">对科学</h4>
+                <p>谈科学，同样是一件很自负的事情。</p>
+                <p>
+                  这是一个诺大的主题，其实我只想探讨科学中的形而上。<br>
+                  我从前以为科学是一个超然的学科，曾经还对哲学是科学之母而嗤之以鼻，科学给予了我们总结过去预测未来的能力，也给予了我们深入世界玄奥的机会，怎么能隶属于哲学这门超验的学科。而我尝试阅读更多的物理之后才发现，科学终归是需要一个超验的假说，牛顿力学相较于广义相对论也并非错误与否这类在科学中司空见惯的属性，而只是视角问题，当广义相对论认为微观时空平滑，而量子力学否认连续之时，这两者也并非是孰对孰错的问题，而只是从何种角度透视的结果。<br>
+                  而房间里真正的大象是，当我重新审视科学寻找一种解释万物的理论这一最终目的时，我突然感到到一种形而上的意思。这种对终极理论的直觉可能发生在当知道波函数可以被看作各种不同动量的平面波的叠加的时候，从而推导出的是类似时间和频率的傅立叶变换式时。而当我们不得不去猜测这个世界背后的形而上时，我们好像已经确认了最终理论的存在，而这是无法用科学确认的。<br>
+                  至此，科学的头和尾好像都被一种超验的态度笼罩着，我们在二者中前行。
+                </p>
+              </div>
+              <div class="col-md-6">
+                <h4 class="heading">对宗教</h4>
+                <p>谈宗教，还是一件很自负的事情。</p>
+                <p>
+                  从小接受了科学主义教育和马克思无神训练，必定导致了宗教这两个字眼在我心里被放在了筑起的高墙之外，被塔楼上名为逻辑和实证的弓箭手不停攻击着。而在哲学从内而外摧毁了虚假的高墙之后，虽谈不上披着原旨主义的加尔文式革命者入住了城镇中心，但是能让尼采式的自由意志者和路德式的革命者在内心以一种和平的态度共处。<br>
+                  关于此的变化发生在家乡，是夜晚的点点星辰，是小路的崎岖不平。坐在一群健谈的长辈之间，远处是戏班子两侧传来的乐器奏鸣，我内心想不起哲学，想到的是一种脱离科学和哲学的宗教，一种最贴近生活的生活方式。这些天来做的种种都是一些我早年认为很封建迷信的活动的准备，现在或许依然如此，但不再想着去批判什么，而尝试着辩护什么。正如尼采所说，只有古希腊的哲学是真正的哲学，因为他们以此为生活信条并且身体力行，如果小镇里的宗教是这些人祖祖辈辈身体力行的行为准则，他们的悲苦，他们的言笑，我们能批判吗？或许是看到科学无法对人所追求的做出任何改变后的一丝无奈，这些无奈化作一丝丝不解的气息，仿佛成了小镇的光玉。<br>
+                  多年的科学素质教育已经破坏了我对宗教信仰无偏思考的能力，我不想再为了满足自己思辨欲望而污染长辈信仰中的纯洁。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- thinking page end-->
+
+    <!-- reading-->
+    <section id="reading" style="background-color: #fff">
+      <div class="container">
+        <div class="row services">
+          <div class="col-lg-12">
+            <h2 class="heading">阅读</h2>
+            <div>
+              <p>有时候，我已经怀疑了我读书的目的，但是还是会经不住捧起书的诱惑。好像读书已经成为了一种生活惯性。</p>
+              <p>当我听到有人说，
+                <a style="font-style: italic;">“因为我们不知道死亡何时降临，我们才会以为生命是一口永不干涸的井。然而每件事情都只会发生一个特定的次数，一个很少的次数，真的。你还会想起多少次童年的那个特定的下午，那个已经深深成为你生命一部分、没有它你便无法想象自己人生的下午？也许还有四五次。也许更少。”
+                </a>,我想起的就是家里读书的那个午后。</p>
+              <p>而我从前单纯认为我能读好多书，但当我面对堆满的书籍，想读的清单，深感时间的不足，那是一种很无力的惆怅。</p>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[德]弗里德里希·尼采，偶像的黄昏
+                    <a href="https://book.douban.com/subject/30488945/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content1" class="hide_content">
+                  <p>
+                    哲学感悟<br>
+                    构造体系常常是用逻辑推理冒充真实的感悟和思考<br>
+                    周国平的思考，尼采若真如此思考，那我感觉他还是带有形而上的思考，或者这也是他的反理性。<br>
+                    活着的人对于生命的谴责归根到底只是一定类型的生命的征兆<br>
+                    生产力决定道德价值<br>
+                    把状态的好坏归结为道德的原因，其中贯穿着寻找责任者并加以惩罚的意图<br>
+                    宗教再一次和社会主义相像。<br>
+                    唯有个体被抛弃，在全之中万物得到拯救和肯定<br>
+                    一直感觉人无论是一直追求寻找人和“动物”的区别，或者保护动物，不吃肉，我感觉都不是在追求一种真正动物和人平等，而是一种来自上层的傲慢。我总认为人是自然的，非常自然的，而对自然最大的尊敬是遵循我们内在的天性。<br>
+                    即是我们之中最勇敢的人，对于他原本知道的事情也只有很少的勇气。<br>
+                    不敢承认被烙下罪恶的欲望<br>
+                    死后方生的人——譬如我——比起合时宜的人来，被理解得较差，但更好地被倾听。严格地说，我们仍将不被理解——而我们的权威即由此而来……<br>
+                    尼采的确死后方生，他真自信<br>
+                    合时宜的人更好地被倾听，更差地被理解，又一个能作为孤独安慰剂的名句<br>
+                    “理性=美德=幸福”<br>
+                    提出此的苏格拉底是上帝还不存在或毁灭后的上帝<br>
+                    不自觉地为消化良好而心怀感谢（有时美其名曰“博爱”）<br>
+                    真实恶狠狠地揭露<br>
+                    反对生命本能的，它们是对生命本能的隐蔽的或公开的、肆无忌惮的谴责<br>
+                    最后导致的是极少数人纵欲<br>
+                    感觉类似知识，当一件事物被公权力视为恶意的，很可能只是因为这是少数人才可以享用的<br>
+                    我们在意识中寻找，并且只要找，就总能找到“动机”，否则就不能自由地作次行为，也不能对之负责。<br>
+                    像极了我疯狂寻找人生的意义的样子。<br>
+                    两者好像能够等价<br>
+                    甚至连你们的原子，我的机械论者和物理学家先生们，有多少谬误、多少退化的心理尚残存在你们的原子里！<br>
+                    虽然尼采这时候超前反驳了原子的存在，但是他想批判的是一切实体的存在，如果只看这句话可能会被误导成他批判原子，其实是批判存在，有点像我现在所能理解的超弦理论。<br>
+                    会想起尼采谈到的哲学家和科学家的区别——一个用想象力跨越，一个小心翼翼衡量着一切地前进——就很佩服他的想象力。<br>
+                    对于这种“人性”的仇恨、贱民的仇恨，得以永恒化，变成了宗教，变成了天才<br>
+                    觉得从此看到的是尼采的反种族优越，或者说他希望的是一种物竞天择的种族优越论，这种用道德获得的种族优越是虚假的。<br>
+                    花费尽可能少的时间使无数青年男子适宜于、彻底适宜于为国家效劳<br>
+                    不能更认同了，我记得某天深夜刷牙的时候就想，国家发展，我们只是被需要的螺丝，这个螺丝是谁不重要，重要的是能用。<br>
+                    对一个刺激不立刻做出反应，具备一种阻缓、隔离的本能<br>
+                    我认为这是非道德主义者能遵循的<br>
+                    研究自然暴露了屈服、软弱、宿命论<br>
+                    是否因为人们难以从自己的想象力得出结论，只能屈服于研究自然<br>
+                    人相信世界本身充满着美——他忘了自己是美的原因。<br>
+                    又是相当过分的深刻揭露<br>
+                    说话者业已用语言使自己平庸化<br>
+                    我们为了表达自己的体验而放弃自己的体验。<br>
+                    写作感悟<br>
+                    凡了解的人，都对它怀有最高的敬意<br>
+                    总感觉此类表达有无赖的成分，刺激读者的荣誉感来认同主题<br>
+                    情绪感悟<br>
+                    怎么？人仅是上帝的一个错误？抑或上帝是人的一个错误？<br>
+                    这个“怎么”真让我喜笑颜开<br>
+                    来自生活的战争学校。——哪位能杀死我的，使我更为坚强。<br>
+                    居然是出自这里<br>
+                    恐怕完全是一个谜<br>
+                    太过分了，太残忍了，太有意思了。<br>
+                    谋取更可恶的利益——感到自己比别人优越<br>
+                    这点是否可以说明尼采并不是真的推崇一种人种优越论<br>
+                    或者，我因为喜欢尼采而想为他辩护呢<br>
+                    内容感悟<br>
+                    让我们面对自己的行为毫不怯懦！让我们不厌弃自己的行为！——良心的折磨是不体面的。<br>
+                    让想写忏悔录的我情何以堪<br>
+                    虫子被踩后蜷缩起来，这是明智的，它借此减少了重新被踩的概率。用道德的语言说就叫：谦恭。<br>
+                    感觉在讽刺道德拟人化<br>
+                    我为尼采辩护，就像他此刻被我看作一个高级保姆时对我的呵护。
+                  </p>
+                    <div id="get_ct_more1" class="get_ct_more">
+                      <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[美]勒·韦勒克 奥斯汀·沃伦，文学理论
+                    <a href="https://book.douban.com/subject/26938822/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content2" class="hide_content">
+                  <p>
+                    说来惭愧，本来以为是一本帮助提高文学修养的书，例如教会我如何鉴赏某个文学，但是万万没想到，是如此面向研究的一本书，教会的是如何研究文学，非常适合文学专业研究生吧。和我的关系，从某种程度上讲，只要把从世界向内看的我看作虚构的，我每天都在从事文学写作，只要把从我向外看的世界看作虚构的，我每天都在进行文学研究。<br>
+                    哲学思考<br>
+                    艺术分类方法应该与艺术的评价方法有所区别<br>
+                    这一点可以成为很多价值判断的前提<br>
+                    艺术品是另一个平行面上形成的统一体<br>
+                    类似于我们创作的一个容纳自己表现欲的世界<br>
+                    国家无法成功地创立一种既符合意识形态上的要求，又不失为一种伟大艺术的文学<br>
+                    尼采谈及的伟大艺术和国家的对立<br>
+                    人物的劣根性是根据个人的还是社会的道德观念表现出来的？<br>
+                    这应该是一个很有意思的伦理学话题<br>
+                    涉及性本善或性本恶概念<br>
+                    错误地相信人类的一切活动是一个完整的综合体<br>
+                    但我认为是一个完整的综合体<br>
+                    但如果作者指的是某一时代的一切活动是“能被划分到一个确切的类别下的”综合体，那我同意作者<br>
+                    艺术品，我的认识总是不完美的，但是决定性的结构是存在的<br>
+                    太具有哲学味道了，哲学真的是统领各个学科，因为许多学科的基本假设是无法验证的，需要用超验的感受决定这些先验知识<br>
+                    无视了真理<br>
+                    批判无名论无视了真理，这句话感觉有点灌输假设的前提——真理存在<br>
+                    从自己认识中的一个部分建立的更高标准出发去批评自己认识的另一部分<br>
+                    放佛是认知论的观点，又仿佛是对认知论的批评<br>
+                    审美纯粹原理，非常适合解构各种艺术。<br>
+                    文学思考<br>
+                    如果非摹想出诗中每一隐喻的具体形象不可，那么我们对于诗将全然困惑不解<br>
+                    感觉类似欣赏音乐，真不需要过多执着于意象<br>
+                    艺术所表现的东西，优于使用者自己进行的幻想或思考<br>
+                    艺术的价值或许就在于此<br>
+                    要求圆满的表现社会指作家应该认识社会环境甚至具有批评家的某种特殊立场和意识形态<br>
+                    不可能做出纯表述<br>
+                    和我们的当代作家或者那些理智派的当代作家相比，18世纪的感伤太没有节制了<br>
+                    科学，或者辩证给我们太多思索的理由，让我们难以全力相信某些事情。<br>
+                    用文体学审美文学作品<br>
+                    对作品的语言做系统的分析<br>
+                    从审美角度，把特征解释为全部的意义<br>
+                    研究这一系统区别于另一系统的个性特征的总和<br>
+                    观察背离和歪曲语言中一般用法的情形，然后找出其审美效用<br>
+                    很明确的审美方法<br>
+                    观察背离和歪曲语言中一般用法的情形，然后找出其审美效用<br>
+                    感觉当代的写作要求效率，除了文学创作，很难培养出个人个性。<br>
+                    大多数人处于较低的文学水平，因此较低文学形式也就属于“任何时期”的<br>
+                    的确如此，如果文学真有高尚和卑劣之分，那么古往今来，高尚文学只有那么一小批，而且不是因为高尚文学一直在更新，而是文学水平一直没有提高<br>
+                    当全民教育被科学手段普及后，曾经只有上层阶级才能享受的文学教育被改革成科学教育而普及，文学还是接近无人问津的处境。<br>
+                    现代定义的纯文学，没有实用的目的，也没有科学的目的<br>
+                    看来我现在每天写的日记就是纯文学啊<br>
+                    否认审美经验的人可以在自己的终极价值系统中分解艺术价值<br>
+                    也许会发现，艺术的价值恰恰在于它们的广泛的包容性<br>
+                    在于它们的非专门化的包容性之中<br>
+                    文学的包容性让文学可以被多种价值体系所“审”而“美”<br>
+                    小说家把他们的符号世界添加在了我们自己的经验领域上<br>
+                    深表赞同，经验一部小说也应该看作经验世界的一部分，而不是独立的世界<br>
+                    情绪思考<br>
+                    最有影响力的是尼采在《悲剧的诞生》中阐述的日神和酒神<br>
+                    今天刚好看到尼采写出《悲剧的诞生》后被逐出古典语文学界，现在被一名兴许还算权威的作品认为其核心思想在该领域是最有影响力的，这是怎样的梵高式的浪漫结局啊
+                  </p>
+                  <div id="get_ct_more2" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[德]弗里德里希·尼采，悲剧的诞生
+                    <a href="https://book.douban.com/subject/30489680/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content3" class="hide_content">
+                  <p>
+                    哲学思考<br>
+                    一个民族越是领悟世界痛苦的真相，就越是需要用日神的外观来掩盖这个事实，美化人生，以求在宇宙变化之流中夺得现象和个体生命存在的权利<br>
+                    对寻求人生意义却不得之后沉沦的人的综述<br>
+                    夺得是让自己安慰的意义<br>
+                    只存在永恒生成变化的宇宙过程<br>
+                    如果我病态般的怀疑论需要一个背后的“一”，我感觉是此<br>
+                    不管现象如何变化，事物基础之中的生命仍是坚不可摧和充满欢乐的<br>
+                    尼采的乐观<br>
+                    此时此刻，任何安慰都无济于事，思慕之情已经越过了来世，越过了神灵，生存连同它在神灵身上或不死彼岸的辉煌返照都遭到了否定<br>
+                    虽然将此说成我认为任何人的安慰都是无力的这一观点的论据有些许牵强，但是我感到一种深层次的孤独，一种被社会洪流抛弃的孤独。<br>
+                    音乐，先于事物的普遍性<br>
+                    总感觉这里面包含着尼采（叔本华）对音乐的偏见，从纯物理角度看，音乐只是一个物体的属性传达到另一个物体后的结果，声波传入耳膜，如光波映入角膜，本质不应有如此大的区别。<br>
+                    尼采总是只有此岸值得肯定，却好像总在某些微妙的地方表现出彼岸。<br>
+                    科学认识高于对世界法则的艺术反映<br>
+                    导致我们一旦意识到个体化毁灭后就无法理解世界<br>
+                    人生必须有新的美化的外观，以使生气勃勃的个体化世界执着于生命<br>
+                    这句话以描述的语气蕴含着一种无边的悲观<br>
+                    并不存在罪恶，只存在对于人的价值和界限的无知<br>
+                    对价值批判的最深刻批判<br>
+                    对活下去的厌恶被体验为创造的手段<br>
+                    艺术创作的来源<br>
+                    不存在快乐的种类，存在的只是程度以及无数随相表象<br>
+                    非常符合带有实证主义的人的价值观<br>
+                    生命必不可免地永远是无权的，因为生命本质上是非道德的东西<br>
+                    - 对道德的根本否定，也是最深刻的否定。<br>
+                    首先学会尘世慰藉的艺术 学会欢笑<br>
+                    为了防止不自我教育而导致的以基督教方式终结，要学会学会欢笑<br>
+                    内容思考<br>
+                    艺术化永恒生命世界<br>
+                    猜测此处不含对个体化世界的价值判断，否则莫不是一种对个体生命意志的否定<br>
+                    或者说如果存在否定的价值判断，那么尼采还是创造了一个彼岸世界，虽然只是在审美意义上的，而不是道德意义上的。<br>
+                    亦或者二者其实本质还是一个，此岸只是彼岸的派生<br>
+                    对此，有些听众偏要在形象的组合上练习其可怜的机智，反而忽略了真正值得弄清的现象<br>
+                    恰好符合最近学到的关于“音乐何需正确理解”的概念<br>
+                    用艺术家的眼光考察科学，又用人生的眼光考察艺术<br>
+                    全书的精髓<br>
+                    情绪思考<br>
+                    当尼采发表《悲剧的诞生》而被驱逐，我只是好奇有什么是不能被批判的。<br>
+                    疑惑<br>
+                    隐含的前提：人生和世界是由缺陷的、不圆满的，就其本身而言没有充足理由<br>
+                    此处是周国平先生所写，没有引用原文，感觉和尼采对此岸的肯定有悖<br>
+                    突然疑惑尼采到底是肯定还是否定表象世界<br>
+                    如果肯定，那么好像无需再努力达到一个更好的世界<br>
+                    如果否定，那么和我所理解的大方向有悖
+                  </p>
+                  <div id="get_ct_more3" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[英]威尔·贡培兹，现代艺术150年
+                    <a href="https://book.douban.com/subject/26854318/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content4" class="hide_content">
+                  <p>
+                    最好的后现代艺术来自聪明的局外人的观察，在他观察的眼光中，既怀着钦佩，又抱有厌恶。实际上，所有优秀的艺术都是如此。<br>
+                    书中谈到学院派的特点是精细调和而成的柔和色彩，经典的掌故，精巧的线条，人类形态的理想化表现，以及雄心勃勃的主题。感觉就是现在主流的电影、动漫审美。<br>
+                    能从印象派中感受到水纹的律动，这点感觉美。<br>
+                    消费注意时代的艺术，将一件批量生产的物品，转化成了珍贵而独特的东西。而我暂时还是感觉是骗局<br>
+                    刺眼的红、白、黑，加粗的块状字体和印有图案的布料，中国那时候的宣传艺术审美是否出自此。<br>
+                    超现实主义关于梦与性，他们的生平也和性与梦有着强烈的联系。<br>
+                    对于生命阴暗面的感受是德·库宁艺术的一部分，它抵消了作品中和谐的美感，感觉大部分都有类似的哲学思考，但是鲜有人能表现出来，或者以被能理解却具有美感地理解<br>
+                    现代的艺术品交易被作者描述为，他们购买的物品，与智力或审美无关，唯一重要的是，它是一个具有社会声望的品牌产品，并且具有经济效益，真不知道知道此还购买其产品的人是怎样的心态<br>
+                    弗朗西斯·阿里斯的《重演》第一次让我感受到观念艺术对我观念的解构。<br>
+                    艺术，在某种程度上永远是关于如何从杂乱中理出条理。对此，文学、艺术、科学的目标总是相同的：希望掌控生活。<br>
+                    对美的追求，自保和繁衍。
+                  </p>
+                  <div id="get_ct_more4" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+              
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[意] 卡洛·罗韦利，时间的秩序
+                    <a href="https://book.douban.com/subject/33424487/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content5" class="hide_content">
+                  <p>
+                    这本书同样提到了阿那克西曼德的名言，但尼采注重的是非正义性，卡洛注重的是时间的秩序。<br>
+                    万物自发的无序化，像是努斯的无序。<br>
+                    如果去观察事物的微观状态，那么过去与未来的区别就会消失。<br>
+                    当赫拉克利特否认存在时，他是否曾想到两千四百多年后，“存在”被科学地否定了。<br>
+                    机械的物理世界多像是神灵的游戏，却出了bug。<br>
+                    先于观察就理解某种事物的能力，是科学思想的核心。<br>
+                    一些看似不证自明的事，实际上仅仅是偏见。<br>
+                    如今对我们而言很直观的东西，在过去是科学与哲学详细阐述的结果。<br>
+                    我曾经以为教育塑造了我们观念，却没有直观体会，而了解到牛顿的绝对时间塑造了我们对统一时间的看法时，我震惊了。<br>
+                    带来伤感的并非失去，而是情感与爱。<br>
+                    生而为人，我们依靠情感与思想而活。<br>
+                  </p>
+                  <div id="get_ct_more5" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[俄]费多尔·陀思妥耶夫斯基，卡拉马佐夫兄弟
+                    <a href="https://book.douban.com/subject/6313496/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content6" class="hide_content">
+                  <p>
+                    这是一部混杂着哲学与宗教的小说，将作者对伦理的思考揉入卡拉马佐夫四兄弟之中。如果真有理论认为小说的每个角色都是作者部分思考的化身，那么陀思妥耶夫斯基真是极其感性的人。<br>
+                    我感到的是阿廖沙内心宗教般虔诚的心，那是一种不为所动的宁静，他能直面一切对他宗教的反对，但是他知道他的宗教所为的是一分难得的善良。<br>
+                    宗教果真是一个难以权衡的概念，里面既参杂着政府对底层人民的统治，又有着底层人民的自我安慰；它对伦理学的解释，既对文明和人性的保护，同时也有对文明和人性的压抑甚至是毁灭；它终究不是简单地科学与否的问题，也不是简单地政治工具，如果以一种宗教即迷信的态度面对它，无异于另一种迷信。<br>
+                    当前世界的文化价值被西方统治，而西方的文化底蕴是难以无视的接近千年的宗教统治。<br>
+                    真不知道另一本《罪与罚》又是怎样的作品，这部作品中的罪与罚的味道已经很浓厚了。
+                  </p>
+                  <div id="get_ct_more6" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[中] 胡适，容忍与自由
+                    <a href="https://book.douban.com/subject/26674343/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content7" class="hide_content">
+                  <p>
+                    当适之先生谈到当时中国还需要靠鸦片纳税，政府还容许法会，没有完备的大学，没有国民义务教育这些最大的耻辱，深感新中国的伟大。真愿先生能看到今日中国，鼻头难免微酸。<br>
+                    当适之先生谈到美国的摩托车文明和带来的好处，真想让他看看如今的中国，若是我带他参观，我必带有几分骄傲，也带有几分敬重，但一定要有全心全意的感恩。<br>
+                    不容忍的态度来自深信自己是不会错的。<br>
+                    科学增进了人类互助博爱的能力。<br>
+                    因为得不到而鄙视物质会导致社会的懒惰。<br>
+                    世间的大问题绝不是一两个抽象名词所能完全包括的，最要紧的是事实。<br>
+                    阅读应该思考进来的错误并加以反思，虽不能全面但是贵在滴水般的坚持。<br>
+                    文化进步的趋势是要使人类渐渐减轻生活的奋斗至最低度。<br>
+                    先努力充实自己再谈博爱。<br>
+                    胡适年代的英文课本都是莎士比亚时代的，而我们时代的都是无名氏写的小文。
+                  </p>
+                  <div id="get_ct_more7" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[日] 是枝裕和，步履不停
+                    <a href="https://book.douban.com/subject/26963321/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content8" class="hide_content">
+                  <p>
+                    或许是看了些文艺的日漫后，被日本那种细腻的描写吸引了，在看完夏目漱石的「心」之后，找了这部很有名的电影原著看，两天看完了，或者是三四个小时吧，或者更久一点。印象最深刻的是被大哥救起的胖小孩，那段描写中的他汗如雨下，坐立不安，再加上小孩子在一旁埋在膝盖里的憋笑，让我感觉非常真实，很心疼那个小孩，心疼到想写一本小说基于类似的设定。<br>
+                    说来惭愧，或许真的没有对小说的鉴赏能力，在书中冒出的歌曲「蓝色灯光横滨」，搜索后有人评论「奶奶是有多么爱爷爷……」，在此之前我是真的怀疑奶奶非常后悔她的婚姻，已经不爱爷爷了，而在被那个评论影响后，很多细节都被我再次解读成了奶奶对爷爷的爱，比如在念叨着爷爷时准备给爷爷的药片等等。<br>
+                    说回主题，是家人死亡的无奈吧，看完小说，我有点想在下一个节假日回老家去陪陪奶奶，心虽这么想，而一旦想到回去会被要求吃很多，和奶奶爷爷相处也颇为尴尬，总之好像有着许许多多的借口。至于父母，仍然在经济上依赖着他们，好像无可奈何，但很悲哀，本该是他们放松去看世界的年纪，却被我们的未来剥削着。
+                  </p>
+                  <div id="get_ct_more8" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[法] 小仲马 (Alexandre Dumas Fils)，茶花女
+                    <a href="https://book.douban.com/subject/5063806/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content9" class="hide_content">
+                  <p>
+                    朋友推荐的悲剧。<br>
+                    从开始就知道是一场悲剧，到最后甚至看到了当代烂俗电视剧的影子，一位父亲为了儿子以及女儿的名誉拆散了他儿子和一位妓女真心的爱情。<br>
+                    看见了人类社会对欲望的追求和不可避免的腐烂，对爱情的鄙视和不信任。<br>
+                    这个故事不知道有多少是真实的，或许玛格丽特用也不存在过，也或许这世间真有这般奇女子，这些都不重要，我们用文学歌颂伟大的爱情，只是因为我们深刻了解骨子里那些人性是社会性龌龊却自然性纯洁的。<br>最悲剧的是他留下的那份侮辱的金钱和信，难以想象这对一个那般境遇下的女子的打击。<br>性，定义了人类的爱情，却极大地束缚了它的可能，由于人性的自私所赋予的性的污秽，在我们的社会中极大地否定了爱情，恨不得将其完美地剥离，殊不知爱情最初是由性定义的。
+                  </p>
+                  <div id="get_ct_more9" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[英] 毛姆，人性的枷锁
+                    <a href="https://book.douban.com/subject/2035171/" target="_Blank">
+                      <img class="db_btn9" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <div id="hide_content10" class="hide_content">
+                  <p>
+                    从书名可以看出书的内容关乎人性，关乎人生的意义，而且结局也不出意料，人生是没有意义的，序言里面非要否定作者的斯宾诺莎式的对人生意义的否定，反而让我觉得更加没有意义。主人公最后找到的是家庭、爱情、稳定的人生格局，这或许是我的将来，也可能我连这些也攫取不到。因为格局越来越大，视野越来越阔，我们会想着去看远方的风景，但是种种折磨和苦难让我们不得不屈服于人性的枷锁，再浪漫的生活方式也是欲望和机会的化身，不存在超越世俗的美的意义，也不应该对此迷信或寄托情愫。至于理性的生活，真实难以认同，那样的一生就像波斯地毯上繁复的勾线，精致且细腻，却毫无意义。
+                  </p>
+                  <div id="get_ct_more10" class="get_ct_more">
+                        <img src='img/btn/down.png' class="more_bt" id="more_bt" height=40 weight=40>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[美] 苏珊·奈曼 为什么长大
+                    <a href="https://book.douban.com/subject/26769136/" target="_Blank">
+                      <img class="db_btn9" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <p>
+                    恰好在家读的书，家里发生了很多事情，引发了我很多对成长的思考。<br>
+                    读完此书，我认为真正的成长应该是对自己的负责，对自己理性的负责，要知道世界的样貌，也要怀疑世界为什么如此，改变世界不是一种责任，认识世界才是。
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <h5>[日]宫泽贤治，银河铁道之夜
+                    <a href="https://book.douban.com/subject/30237190/" target="_Blank">
+                      <img class="db_btn" border="0" src="img/btn/link.png" width="20" height="20"/>
+                    </a>
+                  </h5>
+                  <p>
+                    真本书单纯最为一本小说，结构和表达就一种让我很喜欢，作者在结局处的处理真的很过分，让我不得不立马再带着结局去回顾整个故事。<br>
+                    书中的主题是生死和陪伴，和作家的生平有深刻关联，能感受作者<a id="philosopher" tabindex="0" style="text-decoration:none" class="bind_hover_card" role="button" data-toggle="popover" data-trigger="focus hover" data-content="求死">心态心态</a>表露无遗<br>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="accordion" class="accordion">
+        <!-- <h3 class="view_heading">查看更多</h3> -->
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseBooks">
+            <img id='show_btn_up' src="img/show/show_up.png" width="44" height="22">
+          </a>
+        </div>
+        <div class="card">
+          <div id="collapseBooks" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              <div class="col-lg-12">
+                <h3 class="heading">2019 完整读书列表</h2>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>
+                      [法] 卢梭，社会契约论或政治权利的原理<br>
+                      [日] 夏目漱石，心<br>
+                      U.S., William Zinsser, On Writing Well<br>
+                      [英] 理查德·道金斯，自私的基因<br>
+                      [日] 是枝裕和，步履不停<br>
+                      [意] 尼科洛·马基雅维里(Machiavelli.N.)，君主论<br>
+                      [法] 小仲马 (Alexandre Dumas Fils)，茶花女<br>
+                      U.K., George Orwell, Animal Farm<br>
+                      [美] 鲁思·本尼迪克特，菊与刀<br>
+                      [美] 大卫·马祖凯里，建筑师<br>
+                      [法] 阿尔贝·加缪，局外人<br>
+                      [美] 艾莉森·麦吉、克里斯托弗·丹尼斯，萤火谷的梦想家<br>
+                      [英] 毛姆，人性的枷锁<br>
+                      [美] 丹尼尔·凯斯，献给阿尔吉侬的花束<br>
+                      [日] 坂本健一，今日店休<br>
+                      [美] 阿图·葛文德，医生的修炼<br>
+                      [英] 伯特兰·罗素，哲学简史<br>
+                      [美] 威尔·杜兰特，哲学的故事<br>
+                      U.S., John Heskett, Design<br>
+                      [美] 苏珊·奈曼 为什么长大<br>
+                      [美] 苏珊·福沃德 克雷格·巴克，原生家庭<br>
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>
+                      [日] 村上春树，挪威的森林<br>
+                      [中] 沈从文，边城<br>
+                      [中] 胡适，容忍与自由<br>
+                      [瑞] 弗雷德里克·巴克曼，时间的礼物<br>
+                      [德] 弗里德里希·尼采，希腊悲剧时代的哲学<br>
+                      [法] 克里斯多夫·夏布特，灯塔<br>
+                      [日] 小山裕久，日本料理神髓<br>
+                      [意] 卡洛·罗韦利，时间的秩序<br>
+                      [捷] 米兰·昆德拉，不能承受的生命之轻<br>
+                      [英] 路德维希·维特根斯坦，文化与价值<br>
+                      U.S., Khaled Hosseini, The Kite Runner<br>
+                      [英]威尔·贡培兹，现代艺术150年<br>
+                      [日]宫泽贤治，银河铁道之夜<br>
+                      [德]弗里德里希·尼采，偶像的黄昏<br>
+                      [英]史蒂芬·霍金，黑洞不是黑的<br>
+                      [俄]费多尔·陀思妥耶夫斯基，卡拉马佐夫兄弟<br>
+                      [德]弗里德里希·尼采，悲剧的诞生<br>
+                      [日]SATOSHI KON，OPUS<br>
+                      [美]勒·韦勒克 奥斯汀·沃伦，文学理论<br>
+                      [意]卡洛·罗韦利，现实不似你所见<br>
+                      U.S., Wendelin Van Draanen, FLIPPED
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseBooks">
+            <img id='show_btn_down' src="img/show/show_down.png" width="44" height="22">
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Reading end-->
+
+     <!-- emotion page-->
+    <section id="emotion" class="text-page section-inverse">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">情绪</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  其实，从最开始量化个人成绩的时候，我就把当天的情绪放在第一位。最初，我计划的是把从难过到开心的程度换算成0到15分，这样，每天为了使自己分数不低，就会有意识地让自己趋向开心的事情。<br>
+                  后面发现这样是不合理的。因为伴随着对许多价值的重估带来的是对开心至上的怀疑，从而意识到那些焦虑，难过，躁动，甚至愤怒，嫉妒，都是构成我的要素，简单的否定这些情绪有种“情绪清洗”的倾向。<br>
+                  从此，我从关注我一天开心的程度转变到关注我一天的各种情绪。
+                </p>
+                <div id="accordion" class="accordion" style="padding-bottom: 20px">
+                  <p>
+                    除此，借助科技的力量，我还能知道我的情绪是如何变化。
+                  </p>
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapsePhoto">
+                      <img id='show_btn_up4' src="img/show/show_up2.png" width="44" height="22">
+                    </a>
+                  </div>
+                  <div class="card">
+                    <div id="collapsePhoto" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="col-lg-12">
+                          <h3 class="heading"></h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/personal/8-8.png" style="width:100%;height:auto;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/personal/8-12.png" style="width:100%;height:auto;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapsePhoto">
+                      <img id='show_btn_down4' src="img/show/show_down2.png" width="44" height="22">
+                    </a>
+                  </div>
+                </div>
+                
+                <p>
+                    而对我而言，最直接的方法就是听歌按情绪来划分，尝试体验情绪，让歌曲可以放大情绪。这么说虽然奇怪，但我想学着享受各种情绪，哪怕是难过的，悲恸的，然后再留出几分心神作个局外人来记录当时自己的感受。
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>进而，我发现读书的时候听歌真的能刺激情绪，总会有那么一两次读着的书恰合配合上了听到的曲子，最近一次发生在读Flipped的时候，听的是「Ensemble Signal 的 Music for 18 Musicians (Modular Version): Pulses」，在接近结局的时候注意到了这首歌，那时候看到Bryce为Julia去庭院里种树，Julia的情绪和思想在剧烈变化，结局却在此戛然而止，而曲子应景地在我看完最后一个单词的时候停止了，这种难以置信的巧合让人突然之间就感到一种审美的圆满。</p>
+                <p>还有一次印象深刻的是读「Animal」听到的「coward」，循环反复的动机配合恰到好处的定音鼓，恰好读到了农场中的猪学会了直立行走，随之滑入眼球的是
+                  <a id="philosopher" tabindex="0" style="text-decoration:none" class="bind_hover_card" role="button" data-toggle="popover" data-trigger="focus hover" data-content="“所有动物都是平等的，但有些动物却比其他动物都平等”">“ALL ANIMALS ARE EQUAL，BUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS”</a>，那瞬间的震撼让我感受到听歌读书的魅力，心中的惊惧被音乐层层放大，层层递进。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="accordion_music" class="accordion">
+        <!-- <h3 class="view_heading">查看更多</h3> -->
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseMusic">
+            <img id='show_btn_up2' src="img/show/show_up2.png" width="44" height="22">
+          </a>
+        </div>
+        <div class="card">
+          <div id="collapseMusic" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              <div class="col-lg-12">
+                <h3 class="heading">2019 音乐</h2>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul type="disc">
+                      <li>La fille aux cheveux de lin, Krystian Zimerman, Preludes, Classical</li>
+                      <li>Concerto for Piano No. 3 in D minor Op 30 I. 1st Movement - Allegro ma non tanto, Charles Münch, Byron Janis, Boston Symphony Orchestra & Sergei Rachmaninoff, Rachmaninov: Concerto for Piano 2-3 / Rhapsody on a Theme by Paganini (Bonus Track Version), Classical</li>
+                      <li>In Search of Calm, Sleep Dealer, Aurora, </li>
+                      <li>Into the Unknown, Idina Menzel & AURORA, Frozen 2 (Original Motion Picture Soundtrack / Deluxe Edition), Soundtrack</li>
+                      <li>Music for 18 Musicians (Modular Version): Pulses, Ensemble Signal, Steve Reich: Music for 18 Musicians, Classical</li>
+                      <li>Pelleas Et Melisande Suite, Op. 80 - 3. Sicilienne, Seattle Symphony Orchestra, Ludovic Morlot, Fauré: Masques Et Bergamasques, Pelléas Et Mélisande, Classical</li>
+                      <li>Prelude & Fugue No. 1 in C Major, BWV 846: Prelude, Glenn Gould, Bach: The Well-Tempered Clavier, Books I & II, BWV 846-893, Classical</li>
+                      <li>solari, Ryuichi Sakamoto, async, Electronic</li>
+                      <li>Stand Out Fit In, ONE OK ROCK, Stand Out Fit In, </li>
+                      <li>Symphony No. 1 in C Minor, WAB 101: III. Scherzo. Lebhaft, schnell, Valery Gergiev & Munich Philharmonic, Bruckner: Symphony No. 1, Classical</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul type="disc">
+                      <li>Harumachi, amazarashi, Nee Mama Anatano Iutoori, 摇滚</li>
+                      <li>Something Just Like This, Coldplay, Something Just Like This, R&B</li>
+                      <li>All Alone With You, EGOIST, All Alone With You - EP, J-Pop</li>
+                      <li>Boku Ga Shinou To Omottanowa, Mika Nakashima, Tough, J-Pop</li>
+                      <li>グランドエスケープ (Movie edit), 三浦透子, 天気の子, Soundtrack</li>
+                      <li>初恋, 東山奈央, イマココ / 月がきれい (アニメ盤), Soundtrack - Anime</li>
+                      <li>双刀, Jay Chou, 叶惠美, Pop</li>
+                      <li>君と光, 大原ゆい子, ゼロセンチメートル, anime</li>
+                      <li>好き, 西野カナ, 好き, J-Pop</li>
+                      <li>時の流れに身をまかせ, テレサ・テン, テレサ・テン ベスト・ヒット, J-Pop</li>
+                      <li>晴天, Jay Chou, 叶惠美, Pop</li>
+                      <li>追追追 (Live), 苏打绿, 十年一刻, 国语流行</li>
+                      <li>雪の華, 中島美嘉, 雪の華, </li>
+                      <li>願いが叶う場所II, 麻枝准, CLANNAD ORIGINAL SOUNDTRACK, Soundtrack</li>
+                      <li>飞鸟与鱼, 齐豫, 骆驼·飞鸟·鱼, </li>
+                      <li>Red Swan, YOSHIKI/hyde, Red Swan, Soundtrack - Anime</li>
+                      <li>Between Worlds, Roger Subirana, XII, </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseMusic">
+            <img id='show_btn_down2' src="img/show/show_down2.png" width="44" height="22">
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- emotion page end-->
+
+    <!-- Life / gallery-->
+    <section id="life" class="gallery">
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-12 col-lg-8">
+                <h2 class="heading">生活</h2>
+                <p>
+                  还记得第一次写年总结的时候，标题就是生活，这些年过去，写的日记越来越多，占用的空间越来越多。每天早上的流水账有时候也会让我感到一丝压力，搜肠刮肚想着一天值得记下的事件、情绪，最后很可能只有
+                  <a style="font-style: italic;">“早上起来之后吃早点，之后…………洗漱完，看书睡觉了” </a>
+                  这样的好像可有可无的记录。<br>
+                  但我还是坚持下来了，想必还会坚持下去，365天的记流水账，是一种繁复的琐事，却成为了对生活真正的繁复的对抗，是我对一整年的生活的辩护。<br>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="photo-des">春 Spring</div>
+                <div class="box"><a href="img/gallery/photo_2019-1.png" data-lightbox="image-1" data-title="玻璃上的斑驳春雨" class="has-border">
+                  <img src="img/gallery/photo_2019-1.png" alt="image" class="img-fluid"></a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">夏 Summer</div>
+                <div class="box"><a href="img/gallery/photo_2019-2.png" data-lightbox="image-1" data-title="夏日骄阳下很艳的花" class="has-border"><img src="img/gallery/photo_2019-2.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">秋 Autumn</div>
+                <div class="box"><a href="img/gallery/photo_2019-3.png" data-lightbox="image-1" data-title="意味着秋天到来的颜色" class="has-border"><img src="img/gallery/photo_2019-3.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">冬 Winter</div>
+                <div class="box"><a href="img/gallery/photo_2019-4.png" data-lightbox="image-1" data-title="冬日傍晚下的宁静" class="has-border"><img src="img/gallery/photo_2019-4.png" alt="image" class="img-fluid"></a></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="photo-des">静 Tranquil</div>
+                <div class="box"><a href="img/gallery/photo_2019-5.png" data-lightbox="image-1" data-title="参加一次会议结束后遇见的静景" class="has-border"><img src="img/gallery/photo_2019-5.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">幻 Illusion</div>
+                <div class="box"><a href="img/gallery/photo_2019-6.png" data-lightbox="image-1" data-title="一次致幻的餐厅体验" class="has-border"><img src="img/gallery/photo_2019-6.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">宏 Grand</div>
+                <div class="box"><a href="img/gallery/photo_2019-7.png" data-lightbox="image-1" data-title="宏大且突兀到一种难以置信" class="has-border"><img src="img/gallery/photo_2019-7.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">夜 Night</div>
+                <div class="box"><a href="img/gallery/photo_2019-8.png" data-lightbox="image-1" data-title="常常看到的岁月夜色" class="has-border"><img src="img/gallery/photo_2019-8.png" alt="image" class="img-fluid"></a></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="photo-des">猫 Cat</div>
+                <div class="box"><a href="img/gallery/photo_2019-9.png" data-lightbox="image-1" data-title="晒被子时天台偶遇的猫" class="has-border"><img src="img/gallery/photo_2019-9.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">乡 Nostalgia</div>
+                <div class="box"><a href="img/gallery/photo_2019-10.png" data-lightbox="image-1" data-title="满怀对第二故乡难掩的思念" class="has-border"><img src="img/gallery/photo_2019-10.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">读 Reading</div>
+                <div class="box"><a href="img/gallery/photo_2019-11.png" data-lightbox="image-1" data-title="当天，这位轮椅上的老人甚至想爬上书店二楼，这份对书的虔诚太让我震撼" class="has-border"><img src="img/gallery/photo_2019-11.png" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-3">
+                <div class="photo-des">琴 Piano</div>
+                <div class="box"><a href="img/gallery/photo_2019-12.png" data-lightbox="image-1" data-title="练琴，一种逃避，但我能逃到哪儿呢，那里不是彼岸，也非理想" class="has-border"><img src="img/gallery/photo_2019-12.png" alt="image" class="img-fluid"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="accordion" class="accordion">
+        <!-- <h3 class="view_heading">查看更多</h3> -->
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseLife">
+            <img id='show_btn_up3' src="img/show/show_up.png" width="44" height="22">
+          </a>
+        </div>
+        <div class="card">
+          <div id="collapseLife" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              <div class="col-lg-12">
+                <h3 class="heading">所以我的2019年</h2>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p style="text-align: center">
+                      82.49&nbsp的个人量化成绩<br>
+                      349&nbsp天的早睡早起<br>
+                      97091&nbsp的运动卡路里消耗<br>
+                      626.30&nbsp公里的跑步<br>
+                      365&nbsp天的英语学习<br>
+                      86&nbsp小时的法语学习<br>
+                      114&nbsp小时的日语学习<br>
+                      422&nbsp小时的阅读<br>
+                      42&nbsp小时的练字<br>
+                      23760&nbsp单词<br>
+                      18250&nbsp个引体向上<br>
+                      19875&nbsp个俯卧撑<br>
+                      120&nbsp小时钢琴练习<br>
+                      56&nbsp小时小提琴练习
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseLife">
+            <img id='show_btn_down3' src="img/show/show_down.png" width="44" height="22">
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Life / gallery end-->
+
+    <!-- text page-->
+    <section id="defend" class="text-page section-inverse">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">对辩护的非辩护</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  我发现我们总是需要作出价值判断和价值选择，我们习惯于价值判断，因为不赋予价值就难以对行为合理化，而简单的价值判断是人人都可以进行的，关于一些敏感话题的价值判断，如果将审题的难度和答题的难度之比作为一个系数，敏感话题的该系数一定远小于哲学的，而哲学的又会小于前沿物理的，最后再小于数学的。<br>
+                  我认为其中涉及的不是问题的具体难度，而是关乎问题是否被形式化定义，人们轻易再数学领域创造新的符号，但是文艺领域的词语更新完全跟不上思想的更新，更不用说基础的语言库就是满是漏洞的。<br>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  实际上，我们是从自己认识中的一个部分建立的更高标准出发去批评自己认识的另一部分。<br>
+                  极端来看，我们对一切的批判，是否只是对吸收了这一切的自己的批判。<br>
+                  总而言之，我希望我能少作出些价值判断，多作出些价值辩护，大胆一点，希望能作出价值赋予。<br>
+                  因为“事物生于何处，则必按照必然性毁于何处；因为它们必遵循时间的秩序支付罚金，为其非正义性而受审判。”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- text page end-->
+
+    <footer style="background-color: #111;">
+      <div class="container"> 
+        <div class="row copyright">
+          <div class="col-md-6">
+            <p class="mb-md-0 text-center text-md-left">&copy;2019 Max Material</p>
+          </div>
+          <div class="col-md-6">
+            <p class="credit mb-md-0 text-center text-md-right">Haokai Hong</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/lightbox2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"> </script>
+    <script src="js/front.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/style.js"></script>
+  </body>
+</html>
