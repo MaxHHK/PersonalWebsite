@@ -1,4 +1,20 @@
+.accordion-1 .accordion-item button {
+    font-size: 22px;   
+}
 
-button.accordion-button {
-    font-size: 20px;
+.single-portfolio > a .contents h3, .single-portfolio > a .contents .h3 {
+    font-size: 40px;
+}
+
+
+.Hover-text {
+    font-size: 35px;
+}
+
+.img-padding {
+    margin: : 10px;
+}
+
+.sec-1 .img-r {
+    right: 1px;    
 }
