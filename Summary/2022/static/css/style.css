@@ -925,6 +925,7 @@ li.navbar_list:hover{
 /*************TESTIMONIAL SECTION START****************/
 .testimonial{
     padding-top: 125px;
+    padding-bottom: 125px;
     overflow: hidden;
 }
 .owl-testimonial .owl-dots{
@@ -1807,3 +1808,22 @@ hr {
   float: left;
   margin-right: 10px;
 }*/
+
+.video.bg-video-img{
+    height:50vh;
+}
+
+.my-profiles {
+    height: 25%;
+}
+
+.video-container {
+    height: 50vh;
+}
+
+.presentation-height {
+    height: 50vh;
+}
+
+img.presentation{
+} 
