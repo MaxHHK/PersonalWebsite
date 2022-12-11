@@ -1833,15 +1833,13 @@ img.presentation{
     background-image: url("../image/video-img.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
     background-size: cover;
-    min-height: 655px
+    min-height: 400px
 }
 .parallax-color-video{
     background-color: #b07150;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
     background-size: cover;
     min-height: 655px
 }
