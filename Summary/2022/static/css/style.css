@@ -889,7 +889,6 @@ li.navbar_list:hover{
     height:550px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center
 }
 
@@ -1834,14 +1833,16 @@ img.presentation{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    min-height: 400px
+    min-height: 400px;
+    background-attachment: unset;
 }
 .parallax-color-video{
     background-color: #b07150;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    min-height: 655px
+    min-height: 655px;
+    background-attachment: unset;
 }
 
 .presentation-container {
