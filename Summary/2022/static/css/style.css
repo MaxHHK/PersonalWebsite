@@ -1870,3 +1870,20 @@ img.presentation{
     color: #ffffff;
        
 }
+
+
+div.photo {
+    padding-bottom: 10px;
+    background-image: url("../../../../Artistry/Works/2022/12_2022.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 400px;
+
+    background-attachment: unset;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
