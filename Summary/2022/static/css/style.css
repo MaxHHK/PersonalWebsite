@@ -1809,19 +1809,15 @@ hr {
 }*/
 
 .video.bg-video-img{
-    height:50vh;
+    height: 25vh;
 }
 
 .my-profiles {
     height: 25%;
 }
 
-.video-container {
-    height: 50vh;
-}
-
 .presentation-height {
-    height: 50vh;
+    height: 25vh;
 }
 
 img.presentation{
@@ -1835,13 +1831,14 @@ img.presentation{
     background-size: cover;
     min-height: 400px;
     background-attachment: unset;
+    background-attachment: fixed;
 }
 .parallax-color-video{
     background-color: #b07150;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    min-height: 655px;
+    min-height: 400px;
     background-attachment: unset;
 }
 
@@ -1850,15 +1847,16 @@ img.presentation{
 }
 
 .parallax-img4 {
-    background-image: url("../image/parallax-4.jpg");
+    background-image: url("../../../../Artistry/Works/2022/12_2022.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    height: 75vh;
     min-height: 655px;
 
     background-attachment: unset;
-    min-height: 400px;
+    min-height: 655px;
 
 }
 
@@ -1871,19 +1869,41 @@ img.presentation{
        
 }
 
+div.video-container {
+    background-image: url("../image/video-btm.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
 
 div.photo {
     padding-bottom: 10px;
-    background-image: url("../../../../Artistry/Works/2022/12_2022.jpg");
+    background-image: url();
 
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    min-height: 400px;
+    min-height: 655px;
+    height: 75vh;
 
     background-attachment: unset;
     display:flex;
     align-items: center;
     justify-content:center;
+}
+
+
+.parallax-img5 {
+    background-image: url("../image/parallax-5.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 655px;
+    height: 75vh;
+
+    background-attachment: unset;
+    min-height: 655px;
+
 }
