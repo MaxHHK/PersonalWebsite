@@ -621,6 +621,9 @@ li.navbar_list:hover{
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     min-height: 655px
 }
 .parallax-color1{
@@ -655,6 +658,10 @@ li.navbar_list:hover{
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     min-height: 655px
 }
 .parallax-color3{
@@ -1620,7 +1627,7 @@ li.footer_list:hover{
     }
 
     .parallax-img3{
-        background-attachment: unset;
+        /*background-attachment: unset;*/
         min-height: 400px;
     }
 
@@ -1630,7 +1637,7 @@ li.footer_list:hover{
     }
 
     .parallax-img1{
-        background-attachment: unset;
+        /*background-attachment: unset;*/
         min-height: 400px;
     }
 
@@ -1825,13 +1832,16 @@ img.presentation{
 
 
 .parallax-img-video{
-    background-image: url("../image/video-img.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
     background-size: auto 100vh;
     min-height: 400px;
     background-attachment: unset;
     background-attachment: fixed;
+
+    background: url("../image/video-img.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .parallax-color-video{
     background-color: #b07150;
