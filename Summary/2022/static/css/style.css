@@ -1828,7 +1828,7 @@ img.presentation{
     background-image: url("../image/video-img.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: auto 100vh;
     min-height: 400px;
     background-attachment: unset;
     background-attachment: fixed;
