@@ -1842,6 +1842,8 @@ img.presentation{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    width: 100%;
 }
 .parallax-color-video{
     background-color: #b07150;
@@ -1867,7 +1869,6 @@ img.presentation{
 
     background-attachment: unset;
     min-height: 655px;
-
 }
 
 .sub-heading {
