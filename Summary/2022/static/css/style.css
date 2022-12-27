@@ -996,7 +996,7 @@ li.navbar_list:hover{
 
 /****************FOOTER SECTION*******************/
 .footer{
-    padding-top: 125px;
+    padding-top: 25px;
 }
 ul.footer_ul{
     list-style: none;
@@ -1027,7 +1027,7 @@ li.footer_list:hover{
 }
 .footer_text{
     text-align: center;
-    padding-bottom: 125px;
+    padding-bottom: 25px;
 }
 
 /*  ===================================
@@ -1788,6 +1788,7 @@ p.comment {
 
 }
 
+
 .fancybox-video {
   display: none;
 }
@@ -1917,4 +1918,8 @@ div.photo {
     background-attachment: unset;
     min-height: 655px;
 
+}
+
+.book-pre{
+    padding: 25px;
 }
