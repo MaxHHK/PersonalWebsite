@@ -175,3 +175,15 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
+window.onscroll = function(){
+    //滚屏时固定背景的遮罩
+    document.querySelectorAll('.fixedbg').forEach(function(pre){
+        var bound = pre.parentElement.getBoundingClientRect();
+        var clip = 'rect('+ [bound.top + 'px', pre.parentElement.clientWidth + 'px', bound.bottom + 'px', 0].join() +')';
+        pre.style.clip = clip;
+    })
+}

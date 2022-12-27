@@ -1613,6 +1613,7 @@ li.footer_list:hover{
     /****************HOME SECTION***********/
     .parallax-img1 {
         background-position: center right;
+        background-attachment: unset;
     }
     .parallax-img2 {
         background-position-x: 70%;
@@ -1629,6 +1630,7 @@ li.footer_list:hover{
     .parallax-img3{
         /*background-attachment: unset;*/
         min-height: 400px;
+        background-attachment: unset;
     }
 
     .parallax-img2{
@@ -1835,15 +1837,13 @@ img.presentation{
     background-size: auto 100vh;
     min-height: 400px;
     background-attachment: unset;
-    background-attachment: fixed;
 
     background: url("../image/video-img.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    width: 100%;
+    background-attachment: unset;
 }
 .parallax-color-video{
     background-color: #b07150;
