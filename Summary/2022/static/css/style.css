@@ -1912,7 +1912,7 @@ div.photo {
     background-attachment: fixed;
     background-size: cover;
     min-height: 655px;
-    height: 75vh;
+    /*height: 75vh;*/
 
     background-attachment: unset;
     min-height: 655px;
