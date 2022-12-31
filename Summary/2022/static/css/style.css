@@ -639,7 +639,7 @@ li.navbar_list:hover{
     background-image: url("../image/parallax-2.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: unset;
     background-size: cover;
     min-height: 655px
 }
@@ -1756,7 +1756,6 @@ li.footer_list:hover{
         /*width: 270px;*/
     }
 
-
 }
 
 /* self*/
@@ -1778,6 +1777,13 @@ h1, h6.my-head-color {
 p.my-body-color {
     color: #ffffff;
     font-size: 18px;
+    text-indent: 2em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.my-body {
+    height: 10vh;
 }
 
 .home .text-home .sub-heading {
@@ -1819,7 +1825,7 @@ hr {
 }*/
 
 .video.bg-video-img{
-    height: 25vh;
+    height: 20vh;
 }
 
 .my-profiles {
@@ -1922,4 +1928,9 @@ div.photo {
 
 .book-pre{
     padding: 25px;
+}
+
+.video {
+    margin-top: 10vh;;
+    margin-bottom: 10vh;
 }
