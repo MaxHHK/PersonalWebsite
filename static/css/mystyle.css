@@ -18,3 +18,17 @@
 .sec-1 .img-r {
     right: 1px;    
 }
+
+.blog-bg-img {
+    /*background-repeat: no-repeat;*/
+    background-size：cover;
+    background-position: center center;
+}
+
+.blog-bg-img div{
+    background-color: rgba(255,255,255,.8);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px #333;
+    border-radius: 12px;
+    color: rgb(214, 122, 127);
+}
