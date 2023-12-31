@@ -25,9 +25,23 @@
   margin-right: 30px;
 }
 
+#Transcendence {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #Practice_head {
   margin-top: 45px;
   /*padding-top: 50px;*/
+}
+
+#PracticeII {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #audio-container button {
