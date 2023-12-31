@@ -1,14 +1,31 @@
 // Personal
 
+var audio = document.getElementById('audio');
+var playIcon = document.getElementById('play-icon');
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play();
+    playIcon.classList.remove('fa-play');
+    playIcon.classList.add('fa-pause');
+  } else {
+    audio.pause();
+    playIcon.classList.remove('fa-pause');
+    playIcon.classList.add('fa-play');
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   var navigation = document.getElementById("nav_part");
   var block1 = document.getElementById("Summary");
+  var block2 = document.getElementById("break_img");
 
   function handleScroll() {
     var block1Bounding = block1.getBoundingClientRect();
+    var block2Bounding = block1.getBoundingClientRect();
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (block1Bounding.top <= 0 && block1Bounding.bottom >= 0) {
+    if (block1Bounding.top <= 0) {
       navigation.style.opacity = "1";
     } else {
       navigation.style.opacity = "0";

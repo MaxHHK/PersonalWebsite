@@ -9,6 +9,10 @@
   text-indent: 2em;
 }
 
+.Practice_p p {
+  padding-left: 20px;
+  padding-right: 20px
+}
 
 .bg-box {
   background-position: right bottom;
@@ -21,6 +25,25 @@
   margin-right: 30px;
 }
 
+#Practice_head {
+  margin-top: 45px;
+  /*padding-top: 50px;*/
+}
+
+#audio-container button {
+      background-color: #BB2649;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      /*border-radius: 10%;*/
+      cursor: pointer;
+      width: 20vw;
+    }
+
+#audio-container p {
+  color: #BB2649;
+}
 
 #bg-box1 {
   background-image: url(../images/bg1.jpg);
@@ -710,7 +733,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #004445;
+  background-color: #159ec0;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 45px;
@@ -918,7 +941,7 @@ a:focus {
 }
 
 .info_section {
-  background-color: #004445;
+  background-color: #159ec0;
   color: #ffffff;
   padding: 45px 0 10px 0;
 }
