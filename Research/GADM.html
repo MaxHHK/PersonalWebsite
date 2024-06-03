@@ -78,6 +78,36 @@
             </div>
         </div>
     </div>
+    <div class="gallery-inner container py-md-5 py-4">
+        <div class="row stats-con">
+            <div class="col-sm-3 col-6 stats_info counter_grid">
+                <span class="fa fa-atom"></span>
+                <!-- <p class="counter">65.6</p> -->
+                <p><i class="counter">65.6</i> %</p>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <h4>Improvement On QM9</h4>
+            </div>
+            <div class="col-sm-3 col-6 stats_info counter_grid1">
+                <span class="fa fa-pills"></span>
+                <!-- <p class="counter">10.9</p> -->
+                <p><i class="counter">10.9</i> %</p>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <h4>Improvement On GEOM-DRUG</h4>
+            </div>
+            <div class="col-sm-3 col-6 stats_info counter_grid2 mt-sm-0 mt-5">
+                <span class="fa fa-shapes"></span>
+                <!-- <p class="counter">95</p>  -->
+                <p><i class="counter">95</i> %</p>
+                <i class="fa-brands fa-searchengin"></i>
+                <h4>Scaffold Coverage</h4>
+            </div>
+            <div class="col-sm-3 col-6 stats_info counter_grid mt-sm-0 mt-5">
+                <span class="fa fa-regular fa-circle"></span>
+                <p class="counter">2,388</p> <i class="fa-brands fa-searchengin"></i>
+                <h4>New 8-Ring Molecules</h4>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- //banner section -->
 
@@ -86,11 +116,16 @@
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-3 align-items-center">
             <div class="row">
-                <div class="col-lg-8 mt-lg-0 mt-5">
-                    <!-- <h5 class="title-small mb-2">Publications</h5> -->
+                <div class="col-lg-6 mt-lg-0 mt-5">
                     <h3 class="title-big">Abstract</h3>
+                    <!-- <h5 class="title-small mb-2">Publications</h5> -->
                     <p class="mt-4">
-                    <i>Can we train a molecule generator that can generate 3D molecules from a new domain, circumventing the need to collect data?</i> This problem can be cast as the problem of domain adaptive molecule generation. This work presents a novel and principled diffusion-based approach, called <i> GADM</i>, that allows shifting a generative model to desired new domains without the need to collect even a single molecule. As the domain shift is typically caused by the structure variations of molecules, e.g., scaffold variations, we leverage a designated equivariant masked autoencoder (MAE) along with various masking strategies to capture the structural-grained representations of the in-domain varieties. In particular, with an asymmetric encoder-decoder module, the MAE can generalize to unseen structure variations from the target domains. These structure variations are encoded with an equivariant encoder and treated as domain supervisors to control denoising. We show that, with these encoded structural-grained domain supervisors, <i> GADM</i> can generate effective molecules within the desired new domains. We conduct extensive experiments across various domain adaptation tasks over benchmarking datasets. We show that our approach can improve up to 65.6% in terms of success rate defined based on molecular validity, uniqueness, and novelty compared to alternative baselines. 
+                    <i>Can we train a molecule generator that can generate 3D molecules from a new domain, circumventing the need to collect data?</i> This problem can be cast as the problem of domain adaptive molecule generation. This work presents a novel and principled diffusion-based approach, called <i> GADM</i>, that allows shifting a generative model to desired new domains without the need to collect even a single molecule. As the domain shift is typically caused by the structure variations of molecules, e.g., scaffold variations, we leverage a designated equivariant masked autoencoder (MAE) along with various masking strategies to capture the structural-grained representations of the in-domain varieties.
+                  </p>
+                </div>
+                <div class="col-lg-6 mt-lg-0 subpar" style="padding-top: 20px;">
+                  <p class="mt-4">
+                    In particular, with an asymmetric encoder-decoder module, the MAE can generalize to unseen structure variations from the target domains. These structure variations are encoded with an equivariant encoder and treated as domain supervisors to control denoising. We show that, with these encoded structural-grained domain supervisors, <i> GADM</i> can generate effective molecules within the desired new domains. We conduct extensive experiments across various domain adaptation tasks over benchmarking datasets. We show that our approach can improve up to 65.6% in terms of success rate defined based on molecular validity, uniqueness, and novelty compared to alternative baselines. 
                     </p>
                 </div>
             </div>
@@ -107,62 +142,46 @@
 <section class="w3l-stats py-lg-5 py-4" id="demo">
     <div class="py-5 w3l-resume">
         <div class="heading text-center mx-auto">
-            <h6 class="title-small text-center">Demo</h6>
-            <h3 class="title-big mb-md-5 mb-4">Generate what is desired without target domain data.</h3>
+            <h6 class="title-small text-center">Generate what is desired without target domain data.</h6>
+            <h3 class="title-big mb-md-5 mb-4">Demo</h3>
         </div>
+      <div class="container py-lg-5 py-md-3 align-items-center">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-6">
                 <div class="img-effect text-lg-center">
-                    <img src="assets/images/target_molecule.png" width="50%" alt="target" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>Target Molecule (Not in the training set).</figcaption>
+                    <img class="img-round" src="assets/images/target_molecule.png" width="50%" alt="target" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                    <figcaption>
+                      <h4 class="caption"><p>Target Molecule</p>  <i>(Unseen during the training)</i>.
+                      </h4>
+                    </figcaption>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
                 <div class="img-effect text-lg-center">
-                    <img src="assets/images/Masked_target_molecule.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>Target Molecule Scaffold (Unseen for the model).</figcaption>
+                    <img class="img-round" src="assets/images/Masked_target_molecule.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                    <figcaption>
+                      <h4 class="caption"><p>Target Molecule Scaffold</p> <i>(Unseen during the training)</i>.
+                      </h4>
+                    </figcaption>
                 </div>
             </div>
         </div>
         <div class="row text-lg-center">
             <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
                 <div class="img-effect text-lg-center">
-                     <img id="gif-image" src="assets/images/generation.gif" alt="Your GIF" width="50%" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>Domain Adapative Generation.</figcaption>
+                     <img class="img-round" id="gif-image" src="assets/images/generation.gif" alt="Your GIF" width="50%" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                    <figcaption><h4 class="caption"><p>Domain Adapative Generation.</p></h4></figcaption>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
                 <div class="img-effect text-lg-center">
-                    <img src="assets/images/generated.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>Generated Molecule.</figcaption>
+                    <img class="img-round" src="assets/images/generated.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                    <figcaption><h4 class="caption"><p>Generated Molecule.</p></h4></figcaption>
                 </div>
             </div>
         </div>  
         </div>
-    <div class="gallery-inner container py-md-5 py-4">
-        <div class="row stats-con">
-            <div class="col-sm-3 col-6 stats_info counter_grid">
-                <span class="fa fa-laptop"></span>
-                <p class="counter">700</p>
-                <h4>Completed projects</h4>
-            </div>
-            <div class="col-sm-3 col-6 stats_info counter_grid1">
-                <span class="fa fa-hourglass-end"></span>
-                <p class="counter">120</p>
-                <h4>In processes</h4>
-            </div>
-            <div class="col-sm-3 col-6 stats_info counter_grid mt-sm-0 mt-5">
-                <span class="fa fa-gift"></span>
-                <p class="counter">12</p>
-                <h4>Awards Received</h4>
-            </div>
-            <div class="col-sm-3 col-6 stats_info counter_grid2 mt-sm-0 mt-5">
-                <span class="fa fa-smile-o"></span>
-                <p class="counter">1050</p>
-                <h4>Happy Clients</h4>
-            </div>
-        </div>
-    </div>
+      </div>
 </section>
 <!-- //stats -->
 

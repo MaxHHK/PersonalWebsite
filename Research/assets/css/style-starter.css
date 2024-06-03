@@ -44,6 +44,10 @@ figcaption {
     margin-top: 10px;
 }
 
+.img-round {
+  border-radius: 20px;
+}
+
 .text-lg-center {
    text-align: center;
 }
@@ -53,6 +57,14 @@ figcaption {
   top: 10px;
   right: 10px;
   z-index: 1;
+}
+
+.subpar {
+  margin-top: -40px;
+}
+
+h4.caption {
+  margin-bottom: 50px;
 }
 
 html {
