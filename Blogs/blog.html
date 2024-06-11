@@ -149,7 +149,7 @@
 <div class="row mt-5">
 <div class="col-12 text-center">
 
-<p>Copyright &copy; 2024. Haokai Hong All rights reserved.
+<p>Copyright &copy; <span id="year"></span>. Haokai Hong All rights reserved.
 </p>
 </div>
 </div>
@@ -162,6 +162,11 @@
 <span class="visually-hidden">Loading...</span>
 </div>
 </div>
+
+<script>
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
 <script src="static/js/bootstrap.bundle.min.js" type="dcbb1126dd44cf33764fd38e-text/javascript"></script>
 <script src="static/js/tiny-slider.js" type="dcbb1126dd44cf33764fd38e-text/javascript"></script>
 <script src="static/js/flatpickr.min.js" type="dcbb1126dd44cf33764fd38e-text/javascript"></script>

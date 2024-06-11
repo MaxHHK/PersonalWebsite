@@ -16,14 +16,14 @@
         <div class="main-loader">
             <div class="ml-wrap">
                 <div class="ml-mask"></div>
-                <img src="static/image/logo.png" alt="">
+                <img src="../images/logo-hk.svg" alt="">
             </div>
         </div>
         <!-- main-loader end -->		
         <!-- main  -->
         <div id="main">.
             <!--  logo -->
-            <a href="" class="ajax logo-holder"><img src="static/image/logo.png" alt=""></a>
+            <a href="" class="ajax logo-holder"><img src="../images/logo-hk.svg" alt=""></a>
             <!--  logo end -->
             <!--  navigation -->
             <!-- <div class="nav-holder main-menu">
@@ -249,7 +249,7 @@
             <!--  social_links end -->
             <!--  policy-box -->
             <div class="policy-box">
-                <span>&#169; Haokai Hong 2024  -  All rights reserved. </span>
+                <span>&#169; Haokai Hong <span id="year"></span>  -  All rights reserved. </span>
             </div>
             <!--  policy-box end-->
             <!-- cursor-->
@@ -260,6 +260,9 @@
         </div>
         <!-- Main end -->
         <!--=============== scripts  ===============-->
+        <script>
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
 		<script src="static/js/jquery.min.js"></script>
         <script src="static/js/plugins.js"></script>
         <script src="static/js/scripts.js"></script>

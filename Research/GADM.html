@@ -191,7 +191,7 @@
     <div class="footer-content">
       <div class="row">
         <div class="col-lg-8 footer-left">
-          <p class="m-0">Copyright &copy; 2024. Haokai Hong All rights reserved.</p>
+          <p class="m-0">Copyright &copy; <span id="year"></span>. Haokai Hong All rights reserved.</p>
         </div>
         <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
           <ul class="social m-0 p-0">
@@ -232,6 +232,10 @@
 <!-- //Footer -->
 
 <!-- all js scripts and files here -->
+<script>
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
 
 <script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
 
