@@ -2,8 +2,12 @@ div.note{
     color: rgb(214, 214, 214);
 }
 
-h4.note {
+#note-title1 {
     text-align: center;
+}
+
+#note-author {
+    text-align: right;
 }
 
 .accordion-1 .accordion-item button {
