@@ -1,3 +1,11 @@
+div.note{
+    color: rgb(214, 214, 214);
+}
+
+h4.note {
+    text-align: center;
+}
+
 .accordion-1 .accordion-item button {
     font-size: 22px;   
 }
