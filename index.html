@@ -627,12 +627,20 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
     async function displayRandomRow() {
         const rows = await fetchAndParseCSV(csvFile);
         let randomRow = getRandomNonEmptyRow(rows);
+        
         document.getElementById('note-date').innerText = randomRow[6];
         document.getElementById('note-title1').innerText = randomRow[5];
         document.getElementById('note-author').innerText = '--' + randomRow[3];
         document.getElementById('note-title2').innerText = randomRow[7];
         document.getElementById('note-title3').innerText = randomRow[8];
-        document.getElementById('note-class1').innerText = randomRow[14];
+        let class_str = randomRow[14];
+        if (randomRow[15] !== '') {
+            class_str = class_str + ' -> ' + randomRow[15];
+        }
+        if (randomRow[16] !== '') {
+            class_str = class_str + ' -> ' + randomRow[16];
+        }
+        document.getElementById('note-class1').innerText = class_str;
         document.getElementById('note-content').innerText = randomRow[17];
     }
 
