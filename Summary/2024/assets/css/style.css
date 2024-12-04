@@ -523,6 +523,10 @@ button:focus {
   }
 }
 
+.open-btn {
+
+}
+
 @media (max-width: 991px) {
   .site-header {
     /* class for show hide navigation */
@@ -832,7 +836,7 @@ button:focus {
 
 .header-style-1 .menu-info ul .fi {
   position: relative;
-  top: 3px;
+  top: 2px;
   display: inline-block;
   padding-right: 3px;
 }
@@ -900,6 +904,11 @@ button:focus {
 @media (max-width: 991px) {
   .header-style-1 .navbar-header button {
     top: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .header-style-1 .navbar-header button {
+    top: 10px;
   }
 }
 
@@ -1077,6 +1086,10 @@ button:focus {
   top: 0;
 }
 
+.hero-style-1{
+  height: 100vh;
+}
+
 .hero .slide .container {
   height: 100%;
   display: table;
@@ -1116,7 +1129,8 @@ button:focus {
 
 @media (max-width: 767px) {
   .hero .pagi-info {
-    display: none;
+    font-size: 18px;
+    font-size: 1rem;
   }
 }
 
@@ -1135,7 +1149,7 @@ button:focus {
 
 @media (max-width: 850px) {
   .hero .social-links {
-    display: none;
+    left: 20px;
   }
 }
 
@@ -1272,7 +1286,6 @@ button:focus {
     letter-spacing: 4px;
   }
 }
-
 
 .hero-style-1 .slide-title h2 {
     font-size: 70px;
