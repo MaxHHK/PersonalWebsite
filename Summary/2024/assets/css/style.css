@@ -159,6 +159,10 @@ button:focus {
   margin: 0;
 }
 
+.fa:before {
+  margin: 0;
+}
+
 .section-padding {
   padding: 100px 0;
 }
@@ -855,6 +859,32 @@ button:focus {
 
 @media (max-width: 991px) {
   .header-style-1 .menu-info ul .fi:before {
+    font-size: 20px;
+    font-size: 1.33333rem;
+  }
+}
+
+.header-style-1 .menu-info ul .fa {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  padding-right: 3px;
+}
+
+@media (max-width: 991px) {
+  .header-style-1 .menu-info ul .fa {
+    top: 2px;
+  }
+}
+
+.header-style-1 .menu-info ul .fa:before {
+  font-size: 22px;
+  font-size: 1.46667rem;
+  color: #ddd;
+}
+
+@media (max-width: 991px) {
+  .header-style-1 .menu-info ul .fa:before {
     font-size: 20px;
     font-size: 1.33333rem;
   }
@@ -1706,6 +1736,26 @@ page loader
     left: 30px;
     top: 0;
 }
+
+
+.services-icon-wrapper i.fa {
+    position: absolute;
+    padding-top: 25px;
+    top: 0;
+}
+
+.services-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between icons */
+}
+
+.services-icon-wrapper i {
+  font-size: 3.5rem; /* Adjust the size as needed */
+}
+
 .dots {
     width: 15px;
     height: 15px;
