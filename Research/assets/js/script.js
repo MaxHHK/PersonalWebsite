@@ -1,6 +1,8 @@
 jQuery.noConflict();
+
+
 jQuery(document).ready(function($){
-								
+
 							
 function lightboxPhoto() {
 	
