@@ -13,6 +13,7 @@
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
+  <link rel="stylesheet" href="assets/css/personal.css">
 </head>
 
 <body>
@@ -41,10 +42,13 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@about__active">
-                      <a class="nav-link" href="#abstract">Abstract</a>
+                      <a class="nav-link" href="#highlight">Highlight</a>
                   </li>
                   <li class="nav-item @@about__active">
                       <a class="nav-link" href="#demo">Demo</a>
+                  </li>
+                  <li class="nav-item @@about__active">
+                      <a class="nav-link" href="#abstract">Abstract</a>
                   </li>
                   <li class="nav-item @@services__active">
                       <a class="nav-link" href="assets/pdfs/GOAT.pdf" target="_blank">Paper</a>
@@ -83,14 +87,30 @@
                 
                 <!-- <h1 class="mb-4 title"> Interested in </h1> -->
                 <h2 class="mb-4 title"><span class="typed-text"></span><span class="cursor">&nbsp</span></h2>
-                <p>Haokai Hong, Wanyu Lin, Kay Chen Tan</p>
-                <!-- <h5>Code is available on <a href="https://github.com/WanyuGroup/ICLR2025-GOAT">github</a>.</h5> -->
+                <h3>Haokai Hong, Wanyu Lin*, and Kay Chen Tan</h3>
+                <p>
+                  <a href="mailto:haokai.hong@connect.polyu.hk">
+                    haokai.hong@connect.polyu.hk
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:wan-yu.lin@polyu.edu.hk">
+                    wan-yu.lin@polyu.edu.hk
+                  </a></p>
+                <p>
+                  <a href="mailto:kctan@polyu.edu.hk">
+                    kctan@polyu.edu.hk
+                  </a></p>
+                <h3 class="mb-4 title">
+                  ICLR 2025, code is available on <a href="https://github.com/WanyuGroup/ICLR2025-GOAT" target="_blank">github</a>.
+                </h3>
+
             </div>
         </div>
     </div>
     <div class="gallery-inner container py-md-5 py-4">
         <div class="row stats-con">
-            <div class="col-sm-3 col-6 stats_info counter_grid">
+            <div class="col-sm-3 col-6 stats_info counter_grid mt-sm-0 mt-5">
                 <!-- <i class="fa-solid fa-gauge-simple-high"></i> -->
                 <span class="fa fa-gauge-simple-high"></span>
                 <!-- <p class="counter">65.6</p> -->
@@ -104,7 +124,7 @@
                 <i class="fa-solid fa-arrow-up-right-dots"></i>
                 <h4>Accelerating Flow Matching</h4>
             </div>
-            <div class="col-sm-3 col-6 stats_info counter_grid1">
+            <div class="col-sm-3 col-6 stats_info counter_grid1 mt-sm-0 mt-5">
               <span class="fa fa-regular fa-down-long"></span>
               <p><i class="counter">89.6</i> %</p>
               <i class="fa-brands fa-searchengin"></i>
@@ -122,29 +142,58 @@
 </section>
 <!-- //banner section -->
 
-<!-- home page abstract section -->
-<section class="w3l-index3" id="abstract">
-    <div class="midd-w3 py-5">
-        <div class="container py-lg-5 py-md-3 align-items-center">
-            <div class="row">
-                <div class="col-lg-6 mt-lg-0 mt-5">
-                    <h3 class="title-big">Abstract</h3>
-                    <!-- <h5 class="title-small mb-2">Publications</h5> -->
-                    <p class="mt-4">
-                      This paper proposes a new 3D molecule generation framework, called GOAT, for fast and effective 3D molecule generation based on the flow-matching optimal transport objective. Specifically, we formulate a geometric transport formula for measuring the cost of mapping multi-modal features (e.g., continuous atom coordinates and categorical atom types) between a base distribution and a target data distribution. Our formula is solved within a joint, equivariant, and smooth representation space. This is achieved by transforming the multi-modal features into a continuous latent space with equivariant networks. In addition, we find that identifying optimal distributional coupling is necessary for fast and effective transport between any two distributions. 
-                  </p>
-                </div>
-                <div class="col-lg-6 mt-lg-0 subpar" style="padding-top: 20px;">
-                  <p class="mt-4">
-                    We further propose a mechanism for estimating and purifying optimal coupling to train the flow model with optimal transport. By doing so, GOAT can turn arbitrary distribution couplings into new deterministic couplings, leading to an estimated optimal transport plan for fast 3D molecule generation. The purification filters out the subpar molecules to ensure the ultimate generation quality. We theoretically and empirically prove that the proposed optimal coupling estimation and purification yield transport plan with non-increasing cost. Finally, extensive experiments show that GOAT enjoys the efficiency of solving geometric optimal transport, leading to a double speedup compared to the sub-optimal method while achieving the best generation quality regarding validity, uniqueness, and novelty.
-                    The code is available at <a href="https://github.com/WanyuGroup/ICLR2025-GOAT">github</a>.
-                    </p>
+
+<!-- home page second section -->
+<section class="w3l-index3" id="highlight">
+  <div class="midd-w3 py-5">
+      <div class="container py-lg-5 py-md-3 align-items-center">
+          <div class="row">
+            <div class="heading text-center mx-auto">
+              <h3 class="title-big mb-md-5 mb-4">Highlight</h3>
+            </div>
+          </div>
+          <div class="row text-lg-center">
+            <div class="mx-auto">
+                <div class="img-effect text-lg-center highlight">
+                    <h3 class="mb-md-5 mb-4">Motivations</h3>
+                    <div class="mb-md-5 mb-4">
+                      <b>Existing diffusion models</b> typically need approximately 1,000 sampling steps to produce valid samples. 
+                    </div>  
+                    <div class="mb-md-5 mb-4">
+                      <b>Existing flow matching models</b> could not ensure a straight-line trajectory for atom features, leading to high computational costs and numerical errors.
+                    </div>
+                    <img class="img-round" src="assets/images/GOAT/img1.jpg" width="90%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                    <figcaption><h4 class="caption"><p>Illustration of the Idea</p></h4></figcaption>
+                    <!-- <embed 
+                      src="assets/images/GOAT/img1.pdf" 
+                      type="application/pdf" 
+                      style="background: transparent;"
+                      width="100%" 
+                      height="500px"
+                    > -->
+                    <h3 class="mb-md-5 mb-4">Challenges</h3>
+                    <div class="mb-md-5 mb-4">
+                      <b>The multi-modal property</b> of molecular space makes the transport cost measurement hard to optimize.
+                    </div>  
+                    <div class="mb-md-5 mb-4">
+                      <b>The various sizes of geometric graphs</b> to transport introduce difficulties in evaluating the distribution similarity.
+                    </div>
+                    <div class="mb-md-5 mb-4">
+                      <div class="img-effect text-lg-center">
+                          <img class="img-round" src="assets/images/GOAT/transport-en.jpg" width="90%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                          <figcaption>
+                            <h4 class="caption"><p>An Illustration of the Difference Between Straight Coupling and Optimal Coupling</p>
+                            </h4>
+                          </figcaption>
+                      </div>
+                  </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>  
+      </div>
+  </div>
 </section>
-<!-- //home page about section -->
+<!-- //home page second section -->
 
 <!-- stats -->
 <section class="w3l-stats py-lg-5 py-4" id="demo">
@@ -153,66 +202,71 @@
             <h6 class="title-small text-center">Fast and Effective 3D Molecule Generation</h6>
             <h3 class="title-big mb-md-5 mb-4">Demo</h3>
         </div>
-      <div class="container py-lg-5 py-md-3 align-items-center">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-6">
-                <div class="img-effect text-lg-center">
-                    <img class="img-round" id='gif' src="assets/images/GOAT/GOAT-generation.gif" width="50%" alt="target" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>
-                      <h4 class="caption"><p>Target Molecule</p>  <i>(Unseen during the training)</i>.
-                      </h4>
-                    </figcaption>
-                </div>
+        <div class="container py-lg-5 py-md-3 align-items-center">
+          <div class="row align-items-center">
+              <div class="mb-md-5 mb-4">
+                  <div class="img-effect text-lg-center">
+                      
+                      <img class="img-round" id='gif' onclick="location.reload()" src="assets/images/GOAT/GOAT-generation.gif" width="50%" alt="target" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                      <figcaption>
+                        <h4 class="caption"><p>
+                          Accelerated Generation
+                        </p>
+                        </h4>
+                      </figcaption>
+                  </div>
+              </div>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
-                <div class="img-effect text-lg-center">
-                    <img class="img-round" src="assets/images/Masked_target_molecule.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption>
-                      <h4 class="caption"><p>Target Molecule Scaffold</p> <i>(Unseen during the training)</i>.
-                      </h4>
-                    </figcaption>
-                </div>
+            <div class="row text-lg-center">
+              <div class="img-effect text-lg-center highlight">
+                <h3 class="mb-md-5 mb-4">Experiments on QM9</h3>
+                <div class="mb-md-5 mb-4">
+                  <b>With the least sampling steps, GOAT achieves the best atom stability, uniqueness, novelty, and significance.</b>
+                </div>  
+                <img class="img-round" src="assets/images/GOAT/table-1.jpg" width="90%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                <figcaption><h4 class="caption"><p>Experiment on QM9</p></h4></figcaption>
+              </div>
+              <div class="img-effect text-lg-center highlight">
+                <h3 class="mb-md-5 mb-4">Experiments on GEOM-DRUG</h3>
+                <div class="mb-md-5 mb-4">
+                  <b>GOAT achieves competitive performance while maintaining a leading edge in generation speed.</b>
+                </div>  
+                <img class="img-round" src="assets/images/GOAT/table-2.jpg" width="70%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
+                <figcaption><h4 class="caption"><p>Experiment on GEOM-DRUG</p></h4></figcaption>
+              </div>
             </div>
-        </div>
-        <div class="row text-lg-center">
-            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
-                <div class="img-effect text-lg-center">
-                     <img class="img-round" id="gif-image" src="assets/images/generation.gif" alt="Your GIF" width="50%" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption><h4 class="caption"><p>Domain Adapative Generation.</p></h4></figcaption>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 mt-lg-0 mt-4">
-                <div class="img-effect text-lg-center">
-                    <img class="img-round" src="assets/images/generated.png" width="50%" alt="prior" class="img-fluid" style="clear: both; display: block; margin: auto;">
-                    <figcaption><h4 class="caption"><p>Generated Molecule.</p></h4></figcaption>
-                </div>
-            </div>
-        </div>  
+          </div>
         </div>
       </div>
 </section>
 <!-- //stats -->
 
-<!-- home page second section -->
+
+
+<!-- home page abstract section -->
 <section class="w3l-index3" id="abstract">
   <div class="midd-w3 py-5">
       <div class="container py-lg-5 py-md-3 align-items-center">
           <div class="row">
-            <div class="heading text-center mx-auto">
-              <h3 class="title-big mb-md-5 mb-4">Demo</h3>
-            </div>
+              <div class="col-lg-6 mt-lg-0 mt-5">
+                  <h3 class="title-big">Abstract</h3>
+                  <!-- <h5 class="title-small mb-2">Publications</h5> -->
+                  <p class="mt-4">
+                    This paper proposes a new 3D molecule generation framework, called GOAT, for fast and effective 3D molecule generation based on the flow-matching optimal transport objective. Specifically, we formulate a geometric transport formula for measuring the cost of mapping multi-modal features (e.g., continuous atom coordinates and categorical atom types) between a base distribution and a target data distribution. Our formula is solved within a joint, equivariant, and smooth representation space. This is achieved by transforming the multi-modal features into a continuous latent space with equivariant networks. In addition, we find that identifying optimal distributional coupling is necessary for fast and effective transport between any two distributions. 
+                </p>
+              </div>
+              <div class="col-lg-6 mt-lg-0 subpar" style="padding-top: 20px;">
+                <p class="mt-4">
+                  We further propose a mechanism for estimating and purifying optimal coupling to train the flow model with optimal transport. By doing so, GOAT can turn arbitrary distribution couplings into new deterministic couplings, leading to an estimated optimal transport plan for fast 3D molecule generation. The purification filters out the subpar molecules to ensure the ultimate generation quality. We theoretically and empirically prove that the proposed optimal coupling estimation and purification yield transport plan with non-increasing cost. Finally, extensive experiments show that GOAT enjoys the efficiency of solving geometric optimal transport, leading to a double speedup compared to the sub-optimal method while achieving the best generation quality regarding validity, uniqueness, and novelty.
+                  The code is available at <a href="https://github.com/WanyuGroup/ICLR2025-GOAT">github</a>.
+                  </p>
+              </div>
           </div>
-          <div class="row text-lg-center">
-            <div class="mx-auto">
-                <div class="img-effect text-lg-center">
-                    <figcaption><h4 class="caption"><p>Domain Adapative Generation.</p></h4></figcaption>
-                </div>
-            </div>
-        </div>  
       </div>
   </div>
 </section>
-<!-- //home page second section -->
+<!-- //home page about section -->
+
 
 <!-- Footer -->
 <section class="w3l-footer py-sm-5 py-4">
