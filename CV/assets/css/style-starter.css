@@ -11722,3 +11722,9 @@ div#small-dialog iframe {
   opacity: 0; }
 
 /*# sourceMappingURL=style-starter.css.map */
+
+
+.py-5 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important; 
+}
