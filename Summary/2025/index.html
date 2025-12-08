@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2025 Photo Sphere - Refined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0d1a26; /* Deep Navy/Black */
+        color: #e6f0ff;
+        font-family: 'Playfair Display', serif;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      .luxury-font {
+        font-family: 'Cinzel', serif;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        touch-action: none;
+        outline: none;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
+        "three": "https://esm.sh/three@0.160.0",
+        "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.16?external=react,react-dom,three",
+        "@react-three/drei": "https://esm.sh/@react-three/drei@9.99.0?external=react,react-dom,three,@react-three/fiber",
+        "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@2.16.0?external=react,react-dom,three,@react-three/fiber",
+        "uuid": "https://esm.sh/uuid@9.0.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/"
+      }
+    }
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-type="module">
+      import React, { useState, useMemo, useRef, useEffect } from 'react';
+      import ReactDOM from 'react-dom/client';
+      import { Canvas, useFrame } from '@react-three/fiber';
+      import { Environment, OrbitControls, useTexture } from '@react-three/drei';
+      import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
+      import * as THREE from 'three';
+
+      // --- CONSTANTS ---
+      const COLORS = {
+        BLUE: '#4A90E2',
+        DEEP_BLUE: '#0d1a26',
+        STAR_WHITE: '#fffef0',
+        ACCENT_LIGHT: '#80d0ff'
+      };
+      
+      const CONFIG = {
+        PARTICLE_COUNT: 10000, 
+        PHOTO_COUNT: 8, 
+        SPHERE_RADIUS: 8, 
+        CHAOS_RADIUS: 30, 
+        PHOTO_PATHS: [
+          './static/picture/photos/photo1.jpg',
+          './static/picture/photos/photo2.jpg',
+          './static/picture/photos/photo3.jpg',
+          './static/picture/photos/photo4.jpg',
+          './static/picture/photos/photo5.jpg',
+          './static/picture/photos/photo6.jpg',
+          './static/picture/photos/photo7.jpg',
+          './static/picture/photos/photo8.jpg',
+        ]
+      };
+
+      const _tempVec = new THREE.Vector3();
+
+      // --- UTILITY: Fibonacci Sphere Distribution (to prevent conflicts) ---
+      // This ensures the 7 photos are spread out evenly on the sphere's surface.
+      const fibonacciSphere = (samples, radius) => {
+        const points = [];
+        const phi = Math.PI * (3.0 - Math.sqrt(5.0)); // Golden Angle in radians
+        
+        for (let i = 0; i < samples; i++) {
+          const y = 1 - (i / (samples - 1)) * 2; // y goes from 1 to -1
+          const r = Math.sqrt(1 - y * y); // radius at y
+          const theta = phi * i;
+          
+          const x = Math.cos(theta) * r * radius;
+          const z = Math.sin(theta) * r * radius;
+          const pos = new THREE.Vector3(x, y * radius, z);
+          points.push(pos);
+        }
+        return points;
+      };
+
+      // --- PARTICLE SHADERS (unchanged) ---
+      const fragmentShader = `
+        uniform float uTime;
+        varying vec3 vColor;
+        varying float vAlpha;
+
+        void main() {
+          float r = distance(gl_PointCoord, vec2(0.5));
+          if (r > 0.5) discard;
+          
+          float sparkle = sin(uTime * 3.0 + vColor.x * 10.0) * 0.5 + 0.5;
+          vec3 luxuryTint = mix(vColor, vec3(0.7, 0.9, 1.0), sparkle * 0.3); 
+          
+          float glow = 1.0 - (r * 2.0);
+          glow = pow(glow, 2.0);
+          
+          gl_FragColor = vec4(luxuryTint, vAlpha * glow);
+        }
+      `;
+
+      const vertexShader = `
+        uniform float uTime;
+        uniform float uProgress;
+        attribute vec3 aChaosPos;
+        attribute vec3 aTargetPos;
+        attribute float aSize;
+        attribute vec3 aColor;
+        varying vec3 vColor;
+        varying float vAlpha;
+
+        float easeInOutCubic(float x) {
+          return x < 0.5 ? 4.0 * x * x * x : 1.0 - pow(-2.0 * x + 2.0, 3.0) / 2.0;
+        }
+
+        void main() {
+          vColor = aColor;
+          vAlpha = 1.0;
+          float t = easeInOutCubic(uProgress);
+          
+          vec3 pos = mix(aChaosPos, aTargetPos, t);
+
+          if (uProgress > 0.8) {
+              float wind = sin(uTime * 0.5 + pos.y * 0.2) * 0.1;
+              pos.x += wind;
+              pos.z += cos(uTime * 0.3 + pos.x) * 0.05;
+          }
+
+          if (uProgress < 0.3) {
+              float angle = uTime * 0.2;
+              float x = pos.x * cos(angle) - pos.z * sin(angle);
+              float z = pos.x * sin(angle) + pos.z * cos(angle);
+              pos.x = x;
+              pos.z = z;
+          }
+
+          vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+          gl_Position = projectionMatrix * mvPosition;
+          
+          gl_PointSize = aSize * (450.0 / -mvPosition.z);
+        }
+      `;
+      // --- END SHADERS ---
+
+      // --- COMPONENTS ---
+
+      const TreeParticles = ({ progressRef }) => {
+        const pointsRef = useRef(null);
+        const materialRef = useRef(null);
+
+        const { chaosPositions, targetPositions, colors, sizes } = useMemo(() => {
+          const count = CONFIG.PARTICLE_COUNT;
+          const chaosPos = new Float32Array(count * 3);
+          const targetPos = new Float32Array(count * 3);
+          const cols = new Float32Array(count * 3);
+          const s = new Float32Array(count);
+          
+          const lightBlue = new THREE.Color(COLORS.ACCENT_LIGHT);
+          const deepBlue = new THREE.Color(COLORS.DEEP_BLUE);
+          const white = new THREE.Color(COLORS.STAR_WHITE);
+
+          for (let i = 0; i < count; i++) {
+            // Chaos Position (random sphere)
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos(2 * Math.random() - 1);
+            const r = Math.cbrt(Math.random()) * CONFIG.CHAOS_RADIUS;
+            chaosPos[i*3] = r * Math.sin(phi) * Math.cos(theta);
+            chaosPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+            chaosPos[i*3+2] = r * Math.cos(phi);
+
+            // Target Position (uniform sphere)
+            const sphereR = CONFIG.SPHERE_RADIUS * Math.cbrt(Math.random());
+            const sphereTheta = Math.random() * Math.PI * 2;
+            const spherePhi = Math.acos(2 * Math.random() - 1);
+            targetPos[i*3] = sphereR * Math.sin(spherePhi) * Math.cos(sphereTheta);
+            targetPos[i*3+1] = sphereR * Math.sin(spherePhi) * Math.sin(sphereTheta);
+            targetPos[i*3+2] = sphereR * Math.cos(spherePhi);
+
+            const rand = Math.random();
+            let c;
+            if (rand > 0.98) {
+              c = white;
+              s[i] = Math.random() * 0.4 + 0.4;
+            } else if (rand > 0.8) {
+              c = lightBlue; 
+              s[i] = Math.random() * 0.3 + 0.1;
+            } else {
+              c = deepBlue;
+              s[i] = Math.random() * 0.35 + 0.15;
+            }
+            
+            cols[i*3] = c.r; cols[i*3+1] = c.g; cols[i*3+2] = c.b;
+          }
+          return { chaosPositions: chaosPos, targetPositions: targetPos, colors: cols, sizes: s };
+        }, []);
+
+        useFrame((state) => {
+          if (materialRef.current) {
+            materialRef.current.uniforms.uTime.value = state.clock.getElapsedTime();
+            materialRef.current.uniforms.uProgress.value = progressRef.current;
+          }
+        });
+
+        const uniforms = useMemo(() => ({
+          uTime: { value: 0 },
+          uProgress: { value: 0 },
+        }), []);
+
+        return (
+          <points ref={pointsRef}>
+            <bufferGeometry>
+              <bufferAttribute attach="attributes-position" count={chaosPositions.length/3} array={chaosPositions} itemSize={3} />
+              <bufferAttribute attach="attributes-aChaosPos" count={chaosPositions.length/3} array={chaosPositions} itemSize={3} />
+              <bufferAttribute attach="attributes-aTargetPos" count={targetPositions.length/3} array={targetPositions} itemSize={3} />
+              <bufferAttribute attach="attributes-aColor" count={colors.length/3} array={colors} itemSize={3} />
+              <bufferAttribute attach="attributes-aSize" count={sizes.length} array={sizes} itemSize={1} />
+            </bufferGeometry>
+            <shaderMaterial
+              ref={materialRef}
+              vertexShader={vertexShader}
+              fragmentShader={fragmentShader}
+              uniforms={uniforms}
+              transparent={true}
+              depthWrite={false}
+              blending={THREE.AdditiveBlending}
+            />
+          </points>
+        );
+      };
+
+      const PhotoPlane = ({ progressRef, chaos, target, initialRotation, baseScale, texture }) => {
+        const meshRef = useRef(null);
+        const [isLoaded, setIsLoaded] = useState(false);
+        const [aspectRatioScale, setAspectRatioScale] = useState(new THREE.Vector3(1, 1, 1));
+        
+        useEffect(() => {
+            if (texture) {
+                const textureLoadHandler = () => {
+                    const width = texture.image.width;
+                    const height = texture.image.height;
+                    const aspect = width / height;
+
+                    setAspectRatioScale(new THREE.Vector3(aspect, 1, 1));
+                    setIsLoaded(true);
+                };
+
+                // Check if image is already loaded (for potential re-renders)
+                if (texture.image && texture.image.width) {
+                    textureLoadHandler();
+                } else {
+                    // Wait for the texture data to load if not already
+                    texture.source.data.onload = textureLoadHandler;
+                    // Optional: Remove handler on unmount
+                    return () => { texture.source.data.onload = null; };
+                }
+            }
+        }, [texture]);
+        
+        useFrame((state) => {
+            if (!meshRef.current || !isLoaded) return;
+            
+            let t = progressRef.current;
+            let effectiveT = Math.pow(t, 1.2); 
+            const ease = effectiveT < 0.5 ? 4 * effectiveT * effectiveT * effectiveT : 1 - Math.pow(-2 * effectiveT + 2, 3) / 2;
+            const time = state.clock.getElapsedTime();
+            const spin = 0.05 + (1 - ease) * 1.5;
+
+            // Position
+            meshRef.current.position.lerpVectors(chaos, target, ease);
+
+            // Scale: Apply baseScale, ease factor, AND aspect ratio scale
+            const currentScale = baseScale * ease;
+            meshRef.current.scale.x = aspectRatioScale.x * currentScale;
+            meshRef.current.scale.y = aspectRatioScale.y * currentScale;
+            meshRef.current.scale.z = aspectRatioScale.z * currentScale;
+
+
+            // Rotation
+            if (ease > 0.95) {
+                // *** FIX 3: LookAt the center to appear on the sphere's surface ***
+                // We want the plane's normal (its Z-axis) to point outward.
+                // Looking *at* a position twice as far along the position vector achieves this.
+                meshRef.current.lookAt(meshRef.current.position.clone().multiplyScalar(2));
+            } else {
+                meshRef.current.rotation.set(
+                    initialRotation.x + time * spin,
+                    initialRotation.y + time * spin,
+                    initialRotation.z
+                );
+            }
+        });
+        
+        return (
+            <mesh ref={meshRef} >
+                <planeGeometry args={[1, 1]} /> 
+                <meshStandardMaterial 
+                    map={texture}
+                    side={THREE.DoubleSide} 
+                    roughness={0.9} 
+                    metalness={0.1}
+                    transparent={true}
+                    opacity={isLoaded ? 1.0 : 0.0}
+                />
+            </mesh>
+        );
+      };
+      
+      const PhotoManager = ({ progressRef }) => {
+          const textures = useTexture(CONFIG.PHOTO_PATHS);
+          const textureCount = textures.length;
+          const count = CONFIG.PHOTO_COUNT;
+          
+          const photoData = useMemo(() => {
+              const data = [];
+              if (textureCount === 0 || count !== textureCount) return data;
+              
+              // *** FIX 2: Generate conflict-free, evenly distributed target positions ***
+              const targetPoints = fibonacciSphere(count, CONFIG.SPHERE_RADIUS);
+
+              for (let i = 0; i < count; i++) {
+                  const chaosR = (Math.random() * 0.5 + 0.5) * CONFIG.CHAOS_RADIUS;
+                  const chaosTheta = Math.random() * Math.PI * 2;
+                  const chaosPhi = Math.acos(2 * Math.random() - 1);
+                  
+                  const textureIndex = i; 
+                  
+                  data.push({
+                      chaos: new THREE.Vector3(
+                          chaosR * Math.sin(chaosPhi) * Math.cos(chaosTheta),
+                          chaosR * Math.sin(chaosPhi) * Math.sin(chaosTheta),
+                          chaosR * Math.cos(chaosPhi)
+                      ),
+                      // Use the pre-calculated, distributed target point
+                      target: targetPoints[i],
+                      initialRotation: new THREE.Euler(
+                          Math.random() * Math.PI,
+                          Math.random() * Math.PI,
+                          Math.random() * Math.PI
+                      ),
+                      // *** FIX 1: Reduced base scale ***
+                      baseScale: 4.0 * (0.8 + Math.random() * 0.4), 
+                      textureIndex: textureIndex 
+                  });
+              }
+              return data;
+          }, [count, textureCount]);
+          
+          if (!textures.length || textures.some(t => !t)) return null;
+
+          return (
+              <group>
+                  {photoData.map((data, i) => (
+                      <PhotoPlane
+                          key={i}
+                          progressRef={progressRef}
+                          chaos={data.chaos}
+                          target={data.target}
+                          initialRotation={data.initialRotation}
+                          baseScale={data.baseScale}
+                          texture={textures[data.textureIndex]}
+                      />
+                  ))}
+              </group>
+          )
+      }
+
+      const SceneController = ({ isFormed }) => {
+          const progress = useRef(0);
+          
+          useFrame((state, delta) => {
+              const target = isFormed ? 1 : 0;
+              const speed = isFormed ? 0.6 : 1.0; 
+              progress.current = THREE.MathUtils.damp(progress.current, target, speed, delta);
+          });
+
+          return (
+              <>
+                  <Environment preset="night" />
+                  
+                  <group position={[0, 0, 0]}>
+                      <TreeParticles progressRef={progress} />
+                      <PhotoManager progressRef={progress} />
+                  </group>
+
+                  <ambientLight intensity={0.1} />
+                  <spotLight 
+                      position={[15, 10, 15]} 
+                      angle={0.5} 
+                      penumbra={0.5} 
+                      intensity={100} 
+                      color={COLORS.ACCENT_LIGHT} 
+                      castShadow 
+                      shadow-bias={-0.0001}
+                  />
+                  <spotLight position={[-15, -10, -5]} intensity={50} color={COLORS.BLUE} angle={0.5} />
+                  <pointLight position={[0, 0, 10]} intensity={10} color={COLORS.ACCENT_LIGHT} />
+
+                  <EffectComposer disableNormalPass>
+                      <Bloom luminanceThreshold={0.5} mipmapBlur intensity={1.5} radius={0.5} />
+                      <Vignette eskil={false} offset={0.1} darkness={0.6} />
+                  </EffectComposer>
+                  
+                  <OrbitControls 
+                      enablePan={false} 
+                      minPolarAngle={Math.PI / 4} 
+                      maxPolarAngle={Math.PI * 0.9}
+                      minDistance={15}
+                      maxDistance={40}
+                      autoRotate={isFormed}
+                      autoRotateSpeed={0.8}
+                  />
+              </>
+          )
+      }
+
+      const Experience = ({ isFormed }) => {
+        return (
+          <Canvas
+            shadows
+            dpr={[1, 2]}
+            camera={{ position: [0, 0, 30], fov: 45 }}
+            gl={{ antialias: false, toneMapping: THREE.ReinhardToneMapping, toneMappingExposure: 1.5 }}
+            className="bg-black"
+          >
+              <SceneController isFormed={isFormed} />
+          </Canvas>
+        );
+      };
+
+      const Overlay = ({ isFormed, toggleFormed }) => {
+        // --- MODIFICATION START ---
+        const content = isFormed ? (
+          <a 
+            href="./content.html" 
+            className="text-white hover:text-blue-400 underline transition duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore the Summary Content
+          </a>
+        ) : (
+          <span>The memories are currently scattered across the void, awaiting reassembly.</span>
+        );
+        // --- MODIFICATION END ---
+
+        return (
+          <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-6 md:p-12 z-10">
+            <header className="text-left self-start max-w-[60%] md:max-w-none">
+              <h1 className="text-3xl md:text-6xl text-[#e6f0ff] font-bold tracking-widest luxury-font drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight">
+                2025 <br/> Summary
+              </h1>
+              <p className="pointer-events-auto text-[#0d1a26] uppercase tracking-[0.2em] font-semibold mt-2 bg-[#e6f0ff] inline-block px-2 py-1 shadow-lg text-[10px] md:text-base">
+                <a 
+                  href="./content.html" 
+                  rel="noopener noreferrer"
+                >
+                  Read More/阅读
+                </a>
+              </p>
+            </header>
+
+            <div className="flex flex-col items-end self-end max-w-[60%] md:max-w-none">
+              <div className="pointer-events-auto">
+                <button
+                  onClick={toggleFormed}
+                  className={`
+                    relative group overflow-hidden px-5 py-3 md:px-10 md:py-4 
+                    border-2 border-[#e6f0ff] 
+                    text-[#e6f0ff] 
+                    transition-all duration-500 ease-out
+                    ${isFormed ? 'bg-[#1a3852]/80' : 'bg-black/50'}
+                    hover:shadow-[0_0_20px_#80d0ff]
+                    text-right
+                  `}
+                >
+                  <span className={`
+                    absolute inset-0 w-full h-full bg-[#e6f0ff] 
+                    transform transition-transform duration-300 ease-in-out
+                    ${isFormed ? '-translate-x-full' : 'translate-x-0'}
+                    opacity-10
+                  `}></span>
+                  <span className="relative z-10 font-bold text-xs md:text-xl tracking-widest uppercase luxury-font whitespace-nowrap">
+                    {isFormed ? "Scatter" : "Assemble"}
+                  </span>
+                </button>
+              </div>
+              
+              {/* --- MODIFICATION START (Content Display) --- */}
+              <div className="mt-4 text-[#e6f0ff] text-xs tracking-wide opacity-80 text-right pointer-events-auto">
+                {content}
+              </div>
+              {/* --- MODIFICATION END --- */}
+
+              <div className="mt-4 text-[#e6f0ff] text-[10px] md:text-xs tracking-widest opacity-60 text-right">
+                <p>2025</p>
+                <p>Max</p>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      const App = () => {
+        const [isFormed, setIsFormed] = useState(false);
+        return (
+          <div className="w-full h-screen bg-black relative overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <Experience isFormed={isFormed} />
+            </div>
+            <Overlay 
+              isFormed={isFormed} 
+              toggleFormed={() => setIsFormed(prev => !prev)} 
+            />
+            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
