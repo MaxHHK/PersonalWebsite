@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GGND - Stable Molecular Dynamics</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <link rel="stylesheet" href="assets/css/personal.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="site-header" class="fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg stroke">
+      <a class="navbar-brand" href="https://iclr.cc">
+        <img src="assets/images/iclr-navbar-logo.svg" style="height:35px;" />
+      </a>
+      <a class="navbar-brand" href="#">
+        GGND <span class="fa-solid fa-atom"></span>
+      </a>
+
+      <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo02">
+        <span class="fa fa-bars"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#highlight">Highlight</a></li>
+          <li class="nav-item"><a class="nav-link" href="#method">Method</a></li>
+          <li class="nav-item"><a class="nav-link" href="#demo">Experiments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- TITLE -->
+<section class="w3l-banner py-5" style="margin-top:80px;">
+  <div class="container text-center">
+
+    <h1 class="title">
+      Geometric Graph Neural Diffusion for Stable Molecular Dynamics
+    </h1>
+
+    <p style="font-size:18px; margin-top:15px;">
+      Global equivariant diffusion enables stable and generalizable molecular dynamics
+    </p>
+
+    <h3 class="mt-4">Haokai Hong, Wanyu Lin, Chusong Zhang, Kay Chen Tan</h3>
+
+    <h4 class="mt-3">
+      ICLR 2026 · <a href="https://openreview.net/forum?id=T8VcTykTf1&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2026%2FConference%2FAuthors%23your-submissions)">Paper</a> · <a href="https://github.com/HaokaiHong/GGND">Code</a>
+    </h4>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="container mt-5">
+    <div class="row text-center">
+
+      <div class="col">
+        <h2>15×</h2>
+        <p>More Stable</p>
+      </div>
+
+      <div class="col">
+        <h2>100 ps</h2>
+        <p>Stable Horizon</p>
+      </div>
+
+      <div class="col">
+        <h2>↓</h2>
+        <p>Force Error</p>
+      </div>
+
+      <div class="col">
+        <h2>Global</h2>
+        <p>Diffusion</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section id="highlight" class="py-5">
+  <div class="container text-center">
+
+    <h2>Motivation</h2>
+
+    <p>
+      Existing geometric GNNs achieve high accuracy but fail in molecular dynamics simulations.
+    </p>
+
+    <p>
+      Small force errors accumulate, leading to <b>unstable trajectories under distribution shift</b>.
+    </p>
+
+    <img src="assets/images/ggnd/preliminary-results.jpg" width="70%">
+
+    <h2 class="mt-5">Key Idea</h2>
+
+    <p>
+      Replace local message passing with <b>global equivariant diffusion</b>.
+    </p>
+
+    <p>
+      Diffusion propagates information globally and improves robustness.
+    </p>
+
+    <img src="assets/images/ggnd/framework.jpg" width="70%">
+
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method" class="py-5 bg-light">
+  <div class="container">
+
+    <h2 class="text-center">One-Sentence-Summary</h2>
+
+    <div class="row mt-4">
+
+      <div class="col-lg-12">
+        <p>
+          We propose <b>Geometric Graph Neural Diffusion (GGND)</b>, a global module that models interactions via diffusion over fully-connected graphs. GGND can be integrated into existing geometric neural networks.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIMENTS -->
+<section id="demo" class="py-5">
+  <div class="container text-center">
+
+    <h2>Experiments</h2>
+
+    <p>
+      GGND significantly improves stability in long-horizon molecular dynamics.
+    </p>
+
+    <img src="assets/images/ggnd/stability.jpg" width="70%">
+<!-- 
+    <h3 class="mt-5">Results</h3>
+
+    <p>
+      Achieves orders-of-magnitude improvements in stability on challenging benchmarks.
+    </p>
+
+    <img src="assets/images/ggnd/table.jpg" width="70%"> -->
+
+  </div>
+</section>
+
+<!-- ABSTRACT -->
+<section id="abstract" class="py-5 bg-light">
+  <div class="container">
+
+    <h2>Abstract</h2>
+
+    <p>
+      Geometric graph neural networks (Geo-GNNs) have revolutionized molecular dynamics (MD) simulations by providing accurate and fast energy and force predictions. However, minor prediction errors could still destabilize MD trajectories in real MD simulations due to the limited coverage of molecular conformations in training datasets. Existing methods that focus on in-distribution predictions often fail to address extrapolation to unseen conformations, undermining the simulation stability. To tackle this, we propose Geometric Graph Neural Diffusion (GGND), a novel framework that can capture geometrically invariant topological features, thereby alleviating error accumulation and ensuring stable MD simulations. The core of our framework is that it iteratively refines atomic representations, enabling instantaneous information flow between arbitrary atomic pairs while maintaining equivariance. Our proposed GGND is a plug-and-play module that can seamlessly integrate with existing local equivariant message-passing frameworks, enhancing their predictive performance and simulation stability. We conducted sets of experiments on the 3BPA and SAMD23 benchmark datasets, which encompass diverse molecular conformations across varied temperatures. We also ran real MD simulations to evaluate the stability. GGND outperforms baseline models in both accuracy and stability under significant topological shifts, advancing stable molecular modeling for real-world applications.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- Footer -->
+<section class="w3l-footer py-sm-5 py-4">
+  <div class="container">
+    <div class="footer-content">
+      <div class="row">
+        <div class="col-lg-8 footer-left">
+          <p class="m-0">Copyright &copy; <span id="year"></span>. Haokai Hong All rights reserved.</p>
+        </div>
+        <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
+          <ul class="social m-0 p-0">
+            <li><a target="_blank" href="https://haokaihong.com"><i class="fa-solid fa-house"></i></a></li>
+            <li><a target="_blank" href="assets/pdfs/GOAT.pdf"><i class="fa-regular fa-file"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- JS -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
+<!-- all js scripts and files here -->
+<script>
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+</body>
+</html>
