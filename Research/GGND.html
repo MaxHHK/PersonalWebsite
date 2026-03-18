@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>GGND - Stable Molecular Dynamics</title>
 
+  <!-- google fonts -->  
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
   <link rel="stylesheet" href="assets/css/personal.css">
 </head>
@@ -34,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="#highlight">Highlight</a></li>
-          <li class="nav-item"><a class="nav-link" href="#method">Method</a></li>
+          <li class="nav-item"><a class="nav-link" href="#method">Summary</a></li>
           <li class="nav-item"><a class="nav-link" href="#demo">Experiments</a></li>
           <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
         </ul>
@@ -189,15 +192,48 @@
         <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
           <ul class="social m-0 p-0">
             <li><a target="_blank" href="https://haokaihong.com"><i class="fa-solid fa-house"></i></a></li>
-            <li><a target="_blank" href="assets/pdfs/GOAT.pdf"><i class="fa-regular fa-file"></i></a></li>
+            <li><a target="_blank" href="assets/pdfs/GGND.pdf"><i class="fa-regular fa-file"></i></a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- move top -->
+  <button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fa fa-angle-up"></span>
+  </button>
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("movetop").style.display = "block";
+      } else {
+        document.getElementById("movetop").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- /move top -->
+</section>
+<!-- //Footer -->
+
+
 <!-- JS -->
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<!-- bootstrap js -->
+<script src="https://kit.fontawesome.com/eca67806c7.js" crossorigin="anonymous"></script>
+
 
 
 <!-- all js scripts and files here -->
